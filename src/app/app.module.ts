@@ -1,11 +1,13 @@
-import { APP_INITIALIZER, NgModule } from '@angular/core';
+import { APP_INITIALIZER, Injector, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SharedCommonModule } from './shared/shared-common.module';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { AppInjector } from './services/app-injector.service';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -15,6 +17,8 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
     BrowserModule,
     AppRoutingModule,
     SharedCommonModule,
+    NgbModule,
+    HttpClientModule,
     TranslateModule.forRoot({
       loader: {
           provide: TranslateLoader,
@@ -33,7 +37,11 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor(private injectors: Injector) {
+    AppInjector.setInjector(this.injectors);
+  }
+ }
 
 export function HttpLoaderFactory(http: HttpClient){
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');

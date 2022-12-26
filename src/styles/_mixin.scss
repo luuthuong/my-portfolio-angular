@@ -1,0 +1,13 @@
+@mixin alignFlex($justifyContent: center, $alignItem: center) {
+  display: flex;
+  align-items: $alignItem;
+  justify-content: $justifyContent;
+}
+
+
+@mixin truncate($lineClaim) {
+  display: -webkit-box;
+  -webkit-line-clamp: $lineClaim;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
