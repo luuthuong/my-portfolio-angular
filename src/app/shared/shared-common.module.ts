@@ -4,7 +4,8 @@ import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
-import { NgbNavModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbDropdownModule, NgbNavModule } from '@ng-bootstrap/ng-bootstrap';
+import { MaterialModule } from './material.module';
 
 
 
@@ -17,11 +18,14 @@ import { NgbNavModule } from '@ng-bootstrap/ng-bootstrap';
     CommonModule,
     TranslateModule,
     NgbNavModule,
-    RouterModule
+    NgbDropdownModule,
+    RouterModule,
+    MaterialModule
   ],
   exports:[
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    MaterialModule
   ],
   providers: [
     TranslateService

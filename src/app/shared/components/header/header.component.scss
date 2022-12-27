@@ -1,13 +1,20 @@
 @use 'src/styles/index' as *;
+
 .main-navbar {
     height: 70px;
-    background: $Navy;
+    background: #FFFFFF;
     font-family: $CodeFont;
+
+    .btn-action {
+        color: $text-dark;
+    }
 
     .menu-ul {
         li {
             margin: 0px 13px;
+            transition: all .3s ease;
         }
+
         li:first-child {
             margin-left: 0px;
         }
@@ -30,6 +37,10 @@
         outline: 0px;
         transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
 
+        aside {
+            padding: 0 !important;
+        }
+
         li {
             a {
                 display: flex !important;
@@ -41,11 +52,15 @@
             }
 
             .language-container {
-                width: 200px;
-                margin-left: 18px;
-                margin-top: 50px;
-                padding-left: 0px;
-                padding-bottom: 0px;
+                &.group{
+                    width: 100%;
+                    @include alignFlex();
+                    gap: 4px;
+                }
+                width: fit-content;
+                height: 30px;
+                margin-bottom: 5px;
+                padding: 4px !important;
             }
 
             .language-container-selector {
@@ -62,6 +77,7 @@
     .aside-show {
         transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
         right: 0px;
+        background: $bg-white;
     }
 
     aside {
@@ -72,13 +88,13 @@
         -webkit-box-align: center;
         align-items: center;
         flex-direction: column;
-        background-color: $LightNavy;
+        background-color: $bg-main;
         height: 100%;
         position: relative;
         right: -625px;
         margin-left: auto;
         font-family: $CodeFont;
-        box-shadow: rgba(2, 12, 27, 0.7) -10px 0px 30px -15px;
+        box-shadow: 2px 0 20px 0 rgba(82, 82, 83, 0.7);
         padding: 25px;
         transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
 
@@ -91,7 +107,7 @@
             width: 100%;
             flex-direction: column;
             text-align: center;
-            color: $LightestSlate;
+            color: $text-dark;
 
             ol {
                 width: 100%;
@@ -100,12 +116,23 @@
                 list-style: none;
 
                 li {
+                    .language-container {
+                        span {
+                            color: $text-dark;
+                        }
+
+                        &.active {
+                            span {
+                                color: $text-white;
+                            }
+                        }
+                    }
+
                     font-size: 16px;
                     margin: 0px auto 10px;
 
                     span {
                         display: block;
-                        color: $Green;
                         font-size: 14px;
                         margin-bottom: 5px;
                     }
@@ -126,29 +153,41 @@
         }
     }
 
-    .cv-btn {
-        padding: 7px 15px !important;
-    }
-
     .nav-link {
         padding: 5px 0px;
         color: inherit;
         margin: 0px;
         font-size: 13px;
+        transition: all .3s ease;
 
         &:hover {
-            color: $Green;
+
+            .nav-text,
+            .nav-number {
+                font-weight: 600;
+            }
+        }
+
+        &.cv-btn {
+            padding: 7px 15px !important;
+
+            &:hover {
+                background: $bg-highlight;
+                color: $text-white;
+            }
         }
     }
 
+
     .nav-number {
-        color: $Green;
+        color: $text-dark;
         font-size: 12px;
     }
 
     .nav-text {
-        color: $LightestSlate !important;
+        color: $text-dark !important;
         padding-bottom: 4px;
+        transition: font-weight .3s ease;
     }
 
     .menu-wrapper {
@@ -171,7 +210,7 @@
         .hamburger-menu {
             position: relative;
             transform: translateY(25px);
-            background: $Green;
+            background: $bg-dark;
             transition: all 0ms 300ms;
 
             &:before {
@@ -179,7 +218,7 @@
                 position: absolute;
                 left: 0;
                 bottom: 8px;
-                background: $Green;
+                background: $bg-dark;
                 transition: bottom 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
             }
 
@@ -188,7 +227,7 @@
                 position: absolute;
                 left: 0;
                 top: 8px;
-                background: $Green;
+                background: $bg-dark;
                 transition: top 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
             }
 
@@ -222,7 +261,7 @@
 
 .nav-shadow {
     height: 70px;
-    box-shadow: 0 10px 30px -10px rgba(2, 12, 27, 0.7);
+    box-shadow: 0 0px 3px 0px rgba(82, 82, 83, 0.7);
     transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
 }
 
@@ -260,48 +299,41 @@
     padding-left: 16px;
     padding-right: 16px;
     padding-bottom: 4px;
-    background: #172a45;
+    background: $bg-white;
     border-radius: 5px;
     cursor: pointer;
 }
 
+.dropdown.show>.language-container {
+    box-shadow: none;
+}
+
 .language-container-selector {
     margin: 0 !important;
-    color: #cbd5f5 !important;
+    color: $text-dark !important;
     padding: 11px 8px !important;
     text-align: center;
-    background: #0a192f !important;
+    background: $bg-main !important;
+    transition: letter-spacing .3s ease;
+
+    &:hover {
+        letter-spacing: 1.5px;
+    }
 }
 
 .language-container-selector.active {
     margin: 0 !important;
-    color: #cbd5f5 !important;
+    color: $text-white !important;
     padding: 11px 8px !important;
     text-align: center;
-    background: #172a45 !important;
+    background: $bg-dark !important;
 }
 
-.language-container-selector:hover {
-    background: #172a45 !important;
-}
-
-// .language-container-selector.active:after {
-//     content: " ";
-//     background: #58e2c4;
-//     width: 61%;
-//     height: 1px;
-//     position: absolute;
-//     border-radius: 10px;
-//     left: 0;
-//     right: 0;
-//     margin: auto;
-//     margin-top: 21px;
-// }
 .arrow-language {
     font-size: 10px;
     height: 10px;
     width: 10px;
-    fill: #64ffda;
+    fill: $text-dark;
 }
 
 ::ng-deep .dropdown-toggle::after {
@@ -311,17 +343,18 @@
 ::ng-deep .dropdown-menu.show {
     padding: 0 !important;
     border-radius: 7px !important;
-    background: #ccd6f6 !important;
-    margin-top: 10px !important;
-    left: 20px !important;
-    box-shadow: 0 10px 30px -15px rgb(2 12 27 / 70%);
+    background: $bg-main !important;
+    margin-top: 5px !important;
+    left: 10px !important;
+    box-shadow: $box-shadow;
+    border: none !important;
 }
 
 .arrow-active {
     font-size: 20px;
     height: 20px;
     width: 25px;
-    fill: #64ffda;
+    fill: $text-white;
     visibility: hidden;
 }
 

@@ -9,6 +9,9 @@ import { BannerComponent } from './banner/banner.component';
 import { ProjectComponent } from './project/project.component';
 import { MoreProjectComponent } from './more-project/more-project.component';
 import { ContactComponent } from './contact/contact.component';
+import { SharedCommonModule } from '../shared/shared-common.module';
+import { TranslateModule } from '@ngx-translate/core';
+import { CarouselModule } from 'ngx-owl-carousel-o';
 
 
 @NgModule({
@@ -19,11 +22,15 @@ import { ContactComponent } from './contact/contact.component';
     BannerComponent,
     ProjectComponent,
     MoreProjectComponent,
-    ContactComponent
+    ContactComponent,
   ],
   imports: [
     CommonModule,
-    HomeRoutingModule
+    HomeRoutingModule,
+    SharedCommonModule,
+    TranslateModule,
+    CarouselModule
+
   ]
 })
 export class HomeModule { }

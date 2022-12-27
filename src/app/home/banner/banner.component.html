@@ -1,1 +1,24 @@
-<p>banner works!</p>
+<section class="section banner">
+    <div [@bannerTrigger] class="container">
+        <div class="section-box-banner">
+            <div class="content">
+                <div>
+                    <!-- <h1>Hola, mi nombre es</h1> -->
+                    <h1>{{"BANNER.TITLE" | translate}}</h1>
+                </div>
+                <div class='banner-title'>
+                    <h2>Nguyen Luu Thuong.</h2>
+                    <h3>Fullstack Web Developer</h3>
+                </div>
+                <div class='banner-description'>
+                    <p [innerHTML]='"BANNER.DESCRIPTION" | translate' class="mt-4"></p>
+                </div>
+            </div>
+            <div class="div-btn-banner">
+                <button mat-raised-button class="btn-action" (click)='analyticsService.sendAnalyticEvent("click_send_mail", "banner", "email")' >
+                    {{"BANNER.ACTION" | translate}}
+                </button>
+            </div>
+        </div>
+    </div>
+</section>

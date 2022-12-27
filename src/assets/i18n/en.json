@@ -1,14 +1,23 @@
 {
-  "Header.Item1": "About me",
-  "Header.Item2": "Experience",
-  "Header.Item3": "Projects",
-  "Header.Item4": "Contact",
-  "Header.cvBtn": "Resume",
-  "Header.cvName": "CV_Jose_Hernandez_Ingles.pdf",
-
-  "Banner.Pretitle": "Hello! My name is",
-  "Banner.Description": "I have <span class='underline'>4 years of experience</span> developing systems, interfaces, bots, and technological solutions to make the web a better place. I am dedicated to writing and refactoring clean, reusable, and scalable code in <span class='underline'>Angular</span> and sometimes in <span class='underline'>Laravel</span> applying good practices and development standards.",
-  "Banner.ActionBtn": "Get in touch",
+  "HEADER":{  
+    "ABOUT_ME": "About me",
+    "EXPERIENCE": "Experiences",
+    "PROJECT": "Projects",
+    "CONTACT": "Contact",
+    "BLOG": "Blog",
+    "RESUME": "Resume",
+    "CV": "CV_NguyenLuuThuong.pdf"
+  },
+  "LANG":{
+    "CHOOSE_LANG": "Select Languge",
+    "EN": "English",
+    "VI": "VietNam"
+  },
+  "BANNER":{
+    "TITLE": "Hello! My name is",
+    "DESCRIPTION": "I have <span class='underline cursor-pointer text-bold'> 1 years of experience</span> developing systems, interfaces, bots, and technological solutions to make the web a better place. I am dedicated to writing and refactoring clean, reusable, and scalable code in <span class='underline cursor-pointer text-bold'>Angular</span> and <span class='underline cursor-pointer text-bold'>.NET</span>..",
+    "ACTION": "Get in touch"
+  },
 
   "AboutMe.Title": "About me",
   "AboutMe.Paragraphs": [

@@ -4,7 +4,9 @@ import { FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AnalyticsService } from 'src/app/services/analytics.service';
 import { LanguageService } from 'src/app/services/language.service';
-
+import {takeUntil} from 'rxjs/operators';
+import { BaseComponentComponent } from '../base-component.component';
+import { StorageService } from 'src/app/services/storage.service';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -24,24 +26,21 @@ import { LanguageService } from 'src/app/services/language.service';
     ])
   ]
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent extends BaseComponentComponent implements OnInit {
   responsiveMenuVisible: Boolean = false;
   pageYPosition!: number;
-  languageFormControl: FormControl= new FormControl();
+  languageFormControl: FormControl= new FormControl(this.languageService.lang);
   cvName: string = "";
 
   constructor(
     private router: Router,
     public analyticsService: AnalyticsService,
     public languageService: LanguageService
-  ) { }
+  ) {
+    super();
+  }
 
   ngOnInit(): void {
-
-    this.languageFormControl.valueChanges.subscribe(val => this.languageService.changeLanguage(val))
-
-    this.languageFormControl.setValue(this.languageService.language)
-
   }
 
   scroll(el: any) {
@@ -55,25 +54,27 @@ export class HeaderComponent implements OnInit {
   }
 
   downloadCV(){
-    this.languageService.translateService.get("Header.cvName").subscribe(val => {
-      this.cvName = val
-      console.log(val)
-      // app url
-      let url = window.location.href;
+    // this.languageService.translateService.get("Header.cvName").subscribe(val => {
+    //   this.cvName = val
+    //   console.log(val)
+    //   // app url
+    //   let url = window.location.href;
 
-      // Open a new window with the CV
-      window.open(url + "/../assets/cv/" + this.cvName, "_blank");
-    })
+    //   // Open a new window with the CV
+    //   window.open(url + "/../assets/cv/" + this.cvName, "_blank");
+    // })
 
   }
 
   @HostListener('window:scroll', ['getScrollPosition($event)'])
     getScrollPosition(event: any) {
-        this.pageYPosition=window.pageYOffset
+        this.pageYPosition= window.pageYOffset
     }
 
-    changeLanguage(language: string) {
+    changeLanguage(language: 'vi'|'en') {
       this.languageFormControl.setValue(language);
+      this.languageService.changeLanguage(language)
+      StorageService.setItem('lang', language)
     }
 
 }
