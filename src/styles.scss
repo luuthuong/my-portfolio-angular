@@ -12,9 +12,13 @@
     &::-webkit-scrollbar-thumb{
         background-color: $bg-dark;
         border-radius: 8px;
+        &:hover {
+            background: $bg-highlight;
+        }
     }
     &::-webkit-scrollbar-track {
 		background: transparent;  
+        box-shadow: inset 0 0 5px #8892b0;
 	}
 }
 body {
@@ -24,11 +28,12 @@ body {
     overflow-x: hidden;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
-    background-color: $Navy;
+    background-color: $bg-body !important;
     color: $Slate;
     line-height: 1.3;
     font-family: $main-font;
     font-size: 20px;
+
 }
 
 .section-box {

@@ -14,9 +14,11 @@ $bg-gradient: linear-gradient(145deg, #cacaca, #f0f0f0);
 $bg-dark: #33313B;
 $bg-primary: #2B3A55;
 
+$bg-body:#EFEFEF;
 $bg-light-blue:  #6B7AA1;
 $bg-highlight: #393E46;
 $bg-gradient: linear-gradient(145deg, #cacaca, #f0f0f0);
+$bg-gradient-2: linear-gradient(145deg, #e6e6e6, #ffffff);
 // Text
 $text-header: #181D31;
 $text-sub-title: #393E46;
@@ -26,7 +28,7 @@ $text-dark: #222222;
 $box-shadow: 20px 20px 60px #bebebe,
     -20px -20px 60px #ffffff;
 
-$box-shadow-primary: 8px 8px 50px #e3e3e3,
+$box-shadow-primary: 4px 4px 50px #e3e3e3,
 -8px -8px 50px #e2e2e2;
 $box-shadow-concave: 20px 20px 40px #c1c1c1,
     -20px -20px 40px #ffffff;

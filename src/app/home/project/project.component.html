@@ -1,1 +1,83 @@
-<p>project works!</p>
+<section class="section projects" id='projects'>
+    <div class="container">
+        <div class="section-box">
+            <div data-aos="fade-up" data-aos-duration="1000">
+                <h4 class="section-title">
+                    {{"FEATURE_PROJECT.TITLE" | translate}}
+                </h4>
+            </div>
+
+            <div *ngFor='let PROJECT of "FEATURE_PROJECT.PROJECTS" | translate; let i = index'
+                class="d-flex project-container" data-aos="fade-up" data-aos-duration="1000">
+                <owl-carousel-o class='owl-carousel-o' [options]="customOptions" *ngIf="i%2 == 0">
+                    <ng-container *ngFor="let IMG of PROJECT.IMGS">
+                        <ng-template carouselSlide [id]="PROJECT.TITLE + i">
+                            <div #imgContainer class='img-container'>
+                                <img class='img-feature-project rounded'
+                                    src="https://i.pinimg.com/564x/e6/7d/76/e67d76ce62bdbc63a756b182f6b7a025.jpg"
+                                    [alt]="PROJECT.TITLE">
+                            </div>
+                        </ng-template>
+                    </ng-container>
+                </owl-carousel-o>
+                <div class="img-feature-project-container" data-aos="fade-up" data-aos-duration="1000" *ngIf="i%2 == 0">
+                    <div class="img-feature-project-box">
+                        <div class="img-container" style='width: auto;'>
+                            <img class='img-feature-project rounded'
+                                src="https://i.pinimg.com/564x/e6/7d/76/e67d76ce62bdbc63a756b182f6b7a025.jpg"
+                                [alt]="PROJECT.IMGS[0]" width='600px'>
+                        </div>
+                    </div>
+                </div>
+                <div [class.project-info-right]='i%2 == 0' [class.project-info-left]='i%2 != 0' class="h-100"
+                    style="background-image: url('{{PROJECT.IMG}}');">
+                    <div class="project-box">
+                        <h4 [class.text-right]='i%2 == 0' [class.text-left]='i%2 != 0' class="feature-project">
+                            {{"FEATURE_PROJECT.LABEL" | translate}}</h4>
+                        <h5 [class.text-right]='i%2 == 0' [class.text-left]='i%2 != 0' class="project-name">
+                            {{PROJECT.Title}}</h5>
+
+                        <div class="project-desc-box" (click)='debug()'>
+                            <p class="mb-0" [innerHTML]="PROJECT.DESCRIPTION">
+                            </p>
+                        </div>
+                        <ul [class.justify-content-end]='i%2 == 0' [class.justify-content-start]='i%2 != 0'
+                            class="project-skills">
+                            <li *ngFor='let technology of PROJECT.TECHNOLOGIES' class="ml-3">
+                                <span class="underline technology cursor-pointer user-select-none">{{technology}}</span>
+                            </li>
+                        </ul>
+                        <div [class.text-right]='i%2 == 0' [class.justify-content-end]='i%2 == 0' [class.text-left]='i%2 != 0' class="project-links d-flex align-items-center">
+                            <a matRipple class="link-icon" *ngIf="PROJECT['GIT_LINK']" style='color: inherit' [href]="PROJECT['GIT_LINK']"
+                                target="_blank"><i class=" fab fa-github"></i></a>
+                            <a matRipple *ngIf="PROJECT['DEMO_LINK']" class="link-icon" style='color: inherit' [href]="PROJECT['DEMO_LINK']"
+                                target="_blank"><i class=" fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <owl-carousel-o class='owl-carousel-o' [options]="customOptions" *ngIf="i%2 != 0">
+                    <ng-container *ngFor="let img of PROJECT.IMGS">
+                        <ng-template carouselSlide [id]="PROJECT.TITLE+i">
+                            <div class='img-container'>
+                                <img class='img-feature-project rounded'
+                                    src="https://i.pinimg.com/564x/e6/7d/76/e67d76ce62bdbc63a756b182f6b7a025.jpg"
+                                    [alt]="PROJECT.TITLE">
+                            </div>
+                        </ng-template>
+                    </ng-container>
+                </owl-carousel-o>
+                <div class="img-feature-project-container" data-aos="fade-up" data-aos-duration="1000" *ngIf="i%2 != 0">
+                    <div class="img-feature-project-box">
+                        <div class="img-container" style='width: auto;'>
+                            <img class='img-feature-project rounded'
+                                src="https://i.pinimg.com/564x/e6/7d/76/e67d76ce62bdbc63a756b182f6b7a025.jpg"
+                                [alt]="PROJECT.IMGS[0]" width='600px'>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+            </div>
+        </div>
+    </div>
+</section>

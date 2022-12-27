@@ -31,7 +31,7 @@
                 <ng-template ngbNavContent>Third content</ng-template>
             </li>
             <li ngbNavItem (click)='analyticsService.sendAnalyticEvent("click_jobs", "menu", "click")'>
-                <a ngbNavLink (click)='scroll("proyects")'>
+                <a ngbNavLink (click)='scroll("projects")'>
                     <span class="underline nav-text"> {{"HEADER.PROJECT" | translate}}</span></a>
                 <ng-template ngbNavContent>Fourth content</ng-template>
             </li>
@@ -42,7 +42,7 @@
             </li>
             <li class="li-action" ngbNavItem>
                 <app-button-custom customClass="btn-action-mobile" title=" {{'HEADER.RESUME' | translate}}" (onClickEvent)="downloadCV()">
-                    <i class="fa fa-download"></i>
+                    <i class="mx-2 fa fa-download"></i>
                 </app-button-custom>
             </li>
             <li>
@@ -63,9 +63,9 @@
                         </svg>
                     </div>
                     <div ngbDropdownMenu aria-labelledby="dropdownForm1">
-                        <div (click)='changeLanguage("vi")'
+                        <div  matRipple (click)='changeLanguage("vi")'
                             style='border-bottom-left-radius: 0px !important;border-bottom-right-radius: 0px !important;'
-                            class="language-container language-container-selector active"
+                            class="language-container user-select-none language-container-selector active"
                             [class.active]='languageFormControl.value == "vi"'>
                             <img width="20px" src="assets/icons/vietnam-flag-icon.svg" alt="VietNam">
                             <span class="flag-text">Viet Nam</span>
@@ -75,9 +75,9 @@
                                     d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z" />
                             </svg>
                         </div>
-                        <div (click)='changeLanguage("en")'
+                        <div  matRipple (click)='changeLanguage("en")'
                             style="margin-top: 1px !important; border-top-left-radius: 0px !important; border-top-right-radius: 0px !important;"
-                            class="language-container language-container-selector"
+                            class="language-container user-select-none language-container-selector"
                             [class.active]='languageFormControl.value == "en"'>
                             <img width="20px" src="https://www.worldometers.info/img/flags/us-flag.gif" alt="English">
                             <span class="flag-text">English</span>
@@ -115,18 +115,18 @@
                             </a>
                         </li>
                         <li (click)='analyticsService.sendAnalyticEvent("click_jobs", "menu", "click")'>
-                            <a (click)='scroll("proyects")'>
+                            <a (click)='scroll("projects")'>
                                 {{"HEADER.PROJECT" | translate}}
                             </a>
                         </li>
                         <li (click)='analyticsService.sendAnalyticEvent("click_contact", "menu", "click")'>
-                            <a (click)='scroll("proyects")'>
+                            <a (click)='scroll("contact")'>
                                 {{"HEADER.CONTACT" | translate}}
                             </a>
                         </li>
                         <li>
                             <app-button-custom customClass="btn-action-mobile" title=" {{'HEADER.RESUME' | translate}}" (onClickEvent)="downloadCV()">
-                                <i class="fa fa-download"></i>
+                                <i class="mx-2 fa fa-download"></i>
                             </app-button-custom>
                         </li>
                         <li>

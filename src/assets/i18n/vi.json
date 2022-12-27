@@ -1,6 +1,6 @@
 {
 	"HEADER": {
-    "HOME": "Trang chủ",
+		"HOME": "Trang chủ",
 		"ABOUT_ME": "Giới thiệu",
 		"EXPERIENCE": "Kinh nghiệm làm việc",
 		"PROJECT": "Projects",
@@ -9,24 +9,24 @@
 		"RESUME": "Hồ sơ",
 		"CV": "CV_NguyenLuuThuong.pdf"
 	},
-  "LANG":{
-    "CHOOSE_LANG": "Chọn ngôn ngữ",
-    "EN": "Tiếng Anh",
-    "VI": "Tiếng Việt"
-  },
+	"LANG": {
+		"CHOOSE_LANG": "Chọn ngôn ngữ",
+		"EN": "Tiếng Anh",
+		"VI": "Tiếng Việt"
+	},
 	"BANNER": {
 		"TITLE": "Xin chào bạn! Mình tên là",
 		"DESCRIPTION": "Hiện tại, mình đã có  <span class='underline cursor-pointer text-bold'>1 năm kinh nghiệm</span> phát triển hệ thống, giao diện , các giải pháp để tạo tối ưu hóa web tốt hơn. Tôi dành riêng để viết và tái cấu trúc mã sạch, có thể tái sử dụng và có thể mở rộng <span class='underline cursor-pointer text-bold'>Angular</span> và <span class='underline cursor-pointer text-bold'>.NET</span>.",
 		"ACTION": "Get in touch"
 	},
-	"ABOUT_ME":{
-    "TITLE": "Giới thiệu",
-    "PARAGRAPH": [
-      "In my <span class='underline'>1 years as a developer</span>, I seek to train every day. I have worked writing <span class='underline'>unit tests</span>, <span class='underline'>performing continuous integration</span>, and covering backend developer roles with <span class='underline'>Laravel and Mysql</span>. I have led teams having empathy, exercising motivation to partners, and setting plans and goals together.",
-      "My skills also include implementing system improvements, optimizing sites, standardizing patterns, and suggesting and executing ideas that add value to the project I'm working on.",
-      "Some of the technologies that I have trained and worked on include (but are not limited to):"
-    ]
-  },
+	"ABOUT_ME": {
+		"TITLE": "Giới thiệu",
+		"PARAGRAPH": [
+			"In my <span class='underline'>1 years as a developer</span>, I seek to train every day. I have worked writing <span class='underline'>unit tests</span>, <span class='underline'>performing continuous integration</span>, and covering backend developer roles with <span class='underline'>Laravel and Mysql</span>. I have led teams having empathy, exercising motivation to partners, and setting plans and goals together.",
+			"My skills also include implementing system improvements, optimizing sites, standardizing patterns, and suggesting and executing ideas that add value to the project I'm working on.",
+			"Some of the technologies that I have trained and worked on include (but are not limited to):"
+		]
+	},
 
 	"EXPERIENCE": {
 		"TITLE": "Experience",
@@ -49,142 +49,143 @@
 				"DATE": "April 2019 - July 2019",
 				"DESCRIPTION": [
 					"Implementing continuous improvements, working on frontend and backend.",
-				"Creating platforms with Angular, Laravel, ExpressJS, WordPress programmed with functional, reactive, and object-oriented programming paradigms.",
-				"Automation of processes with data structures.",
-				"Design layout with SASS, Bootstrap, Materialize, Bulma, etc."
+					"Creating platforms with Angular, Laravel, ExpressJS, WordPress programmed with functional, reactive, and object-oriented programming paradigms.",
+					"Automation of processes with data structures.",
+					"Design layout with SASS, Bootstrap, Materialize, Bulma, etc."
 				]
 			}
 		]
 	},
-
-	"FeatureProjects.Title": "Mis proyectos",
-	"FeatureProjects.Label": "Proyecto Destacado",
-	"FeatureProjects.Projects": [
-		{
-			"Title": "Agrourbana",
-			"Description": "Aplicación de monitoreo realizada desde cero con módulo de auth, <span class='underline'>gráficos configurables</span>, <span class='underline'>alarmas configurables</span> y <span class='underline'>gestión de usuarios</span>. Cuenta también con lógica de formularios reactvios para la configuración de parámetros.",
-			"imgs": [
-				"assets/images/agrourbana/agrourbana1.png",
-				"assets/images/agrourbana/agrourbana2.png",
-				"assets/images/agrourbana/agrourbana3.png",
-				"assets/images/agrourbana/agrourbana4.png",
-				"assets/images/agrourbana/agrourbana5.png"
-			],
-			"Technologies": [
-				"Laravel",
-				"Angular",
-				"SASS",
-				"Angular Material",
-				"RxJS"
-			]
-		},
-		{
-			"Title": "Tu super plan",
-			"Description": "Cotizador de planes de salud que cuenta con un buscador con el que se hacen consultas avanzadas. Los planes son mostrados en base a la edad, ingreso mensual y ubicacion del usuario. Cuenta con <span class='underline'>chat en linea</span>, <span class='underline'>formulario de contacto</span>, <span class='underline'>sistema de notificaiones por whatsapp y correo</span>, <span class='underline'>auth</span>, y <span class='underline'>gestion de informacion internet a travez del rol de administrador</span>.",
-			"imgs": [
-				"assets/images/tusuperplan/tusuperplan1.png",
-				"assets/images/tusuperplan/tusuperplan2.png",
-				"assets/images/tusuperplan/tusuperplan3.png",
-				"assets/images/tusuperplan/tusuperplan4.png",
-				"assets/images/tusuperplan/tusuperplan5.png"
-			],
-			"Technologies": [
-				"Laravel",
-				"Angular",
-				"SASS",
-				"Angular Material",
-				"RxJS"
-			]
-		},
-		{
-			"Title": "Proyexiot",
-			"Description": "Plataforma de monitoreo de datos pertenecientes a pozos de agua, remolcadores y diversas instalaciones realizada desde cero con módulo de auth, <span class='underline'>gráficos configurables</span>, <span class='underline'>alarmas configurables</span>, <span class='underline'>gestión de usuarios</span> y <span class='underline'>geolocalizacion con openlayers.</span> Cuenta también con lógica de formularios reactivos para la configuración de parámetros.",
-			"imgs": [
-				"assets/images/proyex/proyex1.png",
-				"assets/images/proyex/proyex2.png",
-				"assets/images/proyex/proyex3.png",
-				"assets/images/proyex/proyex4.png",
-				"assets/images/proyex/proyex5.png",
-				"assets/images/proyex/proyex6.png",
-				"assets/images/proyex/proyex7.png",
-				"assets/images/proyex/proyex8.png",
-				"assets/images/proyex/proyex9.png",
-				"assets/images/proyex/proyex10.png",
-				"assets/images/proyex/proyex11.png",
-				"assets/images/proyex/proyex12.png"
-			],
-			"Technologies": [
-				"Laravel",
-				"Angular",
-				"SASS",
-				"Angular Material",
-				"RxJS"
-			]
-		},
-		{
-			"Title": "Hands game",
-			"Description": "Juego de piedra papel y tijeras extendido. Un proyecto personal desarrollado en angular en el que juegas al azar contra la máquina. Cuenta con la utilización de servicios, interfaces y componentes.",
-			"imgs": ["assets/images/hands-game.png"],
-			"ghLink": "https://github.com/andresjosehr/hands-game",
-			"demoLink": "https://proyectos.andresjosehr.com/hands-game",
-			"Technologies": [
-				"Angular",
-				"CSS GRID",
-				"SASS",
-				"Angular animations"
-			]
-		},
-		{
-			"Title": "Countries viewer",
-			"Description": "Interfaz que consume una API de países con el que se pueden visualizar lista de países, ver detalles de cada país, filtrar por nombre y región. Ademas cuenta con un dark mode para alternar entre el tema oscuro y el claro.",
-			"imgs": ["assets/images/countries-viewer.png"],
-			"ghLink": "https://github.com/andresjosehr/countries-viewer",
-			"demoLink": "https://proyectos.andresjosehr.com/countries-viewer",
-			"Technologies": ["Angular", "RxJS", "SASS", "API"]
-		}
-	],
+	"FEATURE_PROJECT": {
+		"TITLE": "My projects",
+		"LABEL": "Feature projects",
+		"PROJECTS": [
+			{
+				"TITLE": "Agrourbana",
+				"DESCRIPTION": "Monitoring application made from scratch with auth module, <span class='underline'>configurable graphics</span>, <span class='underline'>configurable alarms</span>, and <span class='underline'>user management</span>. It also has feedback form logic for parameter configuration.",
+				"IMGS": [
+					"assets/images/agrourbana/agrourbana1.png",
+					"assets/images/agrourbana/agrourbana2.png",
+					"assets/images/agrourbana/agrourbana3.png",
+					"assets/images/agrourbana/agrourbana4.png",
+					"assets/images/agrourbana/agrourbana5.png"
+				],
+				"TECHNOLOGIES": [
+					"Angular",
+					"SASS",
+					"Angular Material",
+					"RxJS",
+					".NET"
+				]
+			},
+			{
+				"TITLE": "Tu super plan",
+				"DESCRIPTION": "Health plan quote that has a search engine with which advanced queries are made. Plans are displayed based on the user's age, monthly income, and location. It has <span class='underline'>online chat</span, <span class='underline'>contact form</span>, <span class='underline'>notification system by whatsapp and mail</span>, <span class='underline'>auth</span>, and <span class='underline'>internet information management through the role of administrator.</span>",
+				"IMGS": [
+					"assets/images/tusuperplan/tusuperplan1.png",
+					"assets/images/tusuperplan/tusuperplan2.png",
+					"assets/images/tusuperplan/tusuperplan3.png",
+					"assets/images/tusuperplan/tusuperplan4.png",
+					"assets/images/tusuperplan/tusuperplan5.png"
+				],
+				"TECHNOLOGIES": [
+					"Laravel",
+					"Angular",
+					"SASS",
+					"Angular Material",
+					"RxJS"
+				]
+			},
+			{
+				"TITLE": "Proyexiot",
+				"DESCRIPTION": "Data monitoring platform belonging to water wells, tugboats, and various installations made from scratch with auth module, <span class='underline'>configurable graphics</span>, <span class='underline'>configurable alarms</span>, <span class='underline'>user management</span>, and <span class='underline'>geolocation with openlayers.</span>",
+				"IMGS": [
+					"assets/images/proyex/proyex1.png",
+					"assets/images/proyex/proyex2.png",
+					"assets/images/proyex/proyex3.png",
+					"assets/images/proyex/proyex4.png",
+					"assets/images/proyex/proyex5.png",
+					"assets/images/proyex/proyex6.png",
+					"assets/images/proyex/proyex7.png",
+					"assets/images/proyex/proyex8.png",
+					"assets/images/proyex/proyex9.png",
+					"assets/images/proyex/proyex10.png",
+					"assets/images/proyex/proyex11.png",
+					"assets/images/proyex/proyex12.png"
+				],
+				"TECHNOLOGIES": [
+					"Laravel",
+					"Angular",
+					"SASS",
+					"Angular Material",
+					"RxJS"
+				]
+			},
+			{
+				"TITLE": "Hands game",
+				"DESCRIPTION": "The rock-paper-scissors game extended. A personal project developed in angular in which you play randomly against the machine. It has the use of services, interfaces, and components.",
+				"IMGS": ["assets/images/hands-game.png"],
+				"GIT_LINK": "https://github.com/andresjosehr/hands-game",
+				"demoLink": "https://projects.andresjosehr.com/hands-game",
+				"TECHNOLOGIES": [
+					"Angular",
+					"CSS GRID",
+					"SASS",
+					"Angular animations"
+				]
+			},
+			{
+				"TITLE": "Countries viewer",
+				"DESCRIPTION": "An interface that consumes an API of countries with which you can view a list of countries, see details of each country, filter by name and region. It also has a dark mode to switch between dark and light themes.",
+				"IMGS": ["assets/images/countries-viewer.png"],
+				"GIT_LINK": "https://github.com/andresjosehr/countries-viewer",
+				"demoLink": "https://projects.andresjosehr.com/countries-viewer",
+				"TECHNOLOGIES": ["Angular", "RxJS", "SASS", "API"]
+			}
+		]
+	},
 
 	"OtherProjects.Title": "Mas proyectos",
 	"OtherProjects.Projects": [
 		{
 			"Title": "Pokemon",
-			"Description": "Buscador de pokemons que utiliza la pokeapi. Se usó programación orientada a objetos para organizar la información de los pokemons junto con su respectiva imagen.",
-			"ghLink": "https://github.com/andresjosehr/pokemon-angular",
+			"DESCRIPTION": "Buscador de pokemons que utiliza la pokeapi. Se usó programación orientada a objetos para organizar la información de los pokemons junto con su respectiva imagen.",
+			"GIT_LINK": "https://github.com/andresjosehr/pokemon-angular",
 			"demoLink": "https://proyectos.andresjosehr.com/pokemon-list",
 			"Technologies": ["Angular", "RxJs", "API", "Bootstrap"]
 		},
 		{
 			"Title": "Coming soon page",
-			"Description": "Proyecto personal de una página dividida de dos columnas para ser usado como 'Coming soon page'. Programada para ser totalmente responsive design. Cuenta con un campo de formulario para suscribirse por correo electrónico.",
-			"ghLink": "https://github.com/andresjosehr/coming-soon-page",
+			"DESCRIPTION": "Proyecto personal de una página dividida de dos columnas para ser usado como 'Coming soon page'. Programada para ser totalmente responsive design. Cuenta con un campo de formulario para suscribirse por correo electrónico.",
+			"GIT_LINK": "https://github.com/andresjosehr/coming-soon-page",
 			"demoLink": "https://proyectos.andresjosehr.com/coming-soon-page",
 			"Technologies": ["Angular", "SASS", "CSS GRID", "Reactive form"]
 		},
 		{
 			"Title": "Four card feature section",
-			"Description": "Una sola página que cuenta con un diseño minimalista que enumera 4 características en 4 cards. Se usan animaciones de entrada con angular animations.",
-			"ghLink": "https://github.com/andresjosehr/fourd-card-feature-section",
+			"DESCRIPTION": "Una sola página que cuenta con un diseño minimalista que enumera 4 características en 4 cards. Se usan animaciones de entrada con angular animations.",
+			"GIT_LINK": "https://github.com/andresjosehr/fourd-card-feature-section",
 			"demoLink": "https://proyectos.andresjosehr.com/four-card-feature-section",
 			"Technologies": ["Angular", "SASS", "CSS GRID"]
 		},
 		{
 			"Title": "Social proof section",
-			"Description": "Proyecto personal de una página diseñada a partir de un diseño hecho en figma. Se utilizó angular para el desarrollo junto con SASS y CSS GRID.",
-			"ghLink": "https://github.com/andresjosehr/social-proof-section",
+			"DESCRIPTION": "Proyecto personal de una página diseñada a partir de un diseño hecho en figma. Se utilizó angular para el desarrollo junto con SASS y CSS GRID.",
+			"GIT_LINK": "https://github.com/andresjosehr/social-proof-section",
 			"demoLink": "https://proyectos.andresjosehr.com/social-proof-section",
 			"Technologies": ["Angular", "CSS GRID", "GIT"]
 		},
 		{
 			"Title": "FAQ accordion card",
-			"Description": "Acordeón de preguntas frecuentes con lógica y animnaciones realizadas en Angular.",
-			"ghLink": "https://github.com/andresjosehr/faq-accordion",
+			"DESCRIPTION": "Acordeón de preguntas frecuentes con lógica y animnaciones realizadas en Angular.",
+			"GIT_LINK": "https://github.com/andresjosehr/faq-accordion",
 			"demoLink": "https://proyectos.andresjosehr.com/faq-accordion",
 			"Technologies": ["Angular", "CSS GRID", "Angular animations"]
 		},
 		{
 			"Title": "Profile card",
-			"Description": "Simple diseño de una página que cuenta con una carta de perfil con información básica de una persona.",
-			"ghLink": "https://github.com/andresjosehr/profile-card-component",
+			"DESCRIPTION": "Simple diseño de una página que cuenta con una carta de perfil con información básica de una persona.",
+			"GIT_LINK": "https://github.com/andresjosehr/profile-card-component",
 			"demoLink": "https://proyectos.andresjosehr.com/profile-card-component",
 			"Technologies": ["Angular", "SASS", "GIT"]
 		}

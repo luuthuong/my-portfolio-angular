@@ -45,7 +45,7 @@ export class HeaderComponent extends BaseComponentComponent implements OnInit {
   scroll(el: any) {
     const element = document.getElementById(el);
     if(element) {
-      element.scrollIntoView({behavior: 'smooth',block: 'center'});
+      element.scrollIntoView({behavior: 'smooth',block: 'start'});
     } else{
       this.router.navigate(['']).then(()=> element!.scrollIntoView({behavior: 'smooth'}) );
     }
