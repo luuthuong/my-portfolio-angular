@@ -8,6 +8,7 @@ import { BaseComponentComponent } from '../base-component.component';
 })
 export class ButtonCustomComponent extends BaseComponentComponent implements OnInit {
   @Input() title: string = '';
+  @Input() customClass: string = '';
   @Output() onClickEvent = new EventEmitter<any>();
   constructor() { 
     super();

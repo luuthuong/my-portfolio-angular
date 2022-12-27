@@ -1,5 +1,6 @@
 {
 	"HEADER": {
+    "HOME": "Trang chủ",
 		"ABOUT_ME": "Giới thiệu",
 		"EXPERIENCE": "Kinh nghiệm làm việc",
 		"PROJECT": "Projects",
@@ -19,7 +20,7 @@
 		"ACTION": "Get in touch"
 	},
 	"ABOUT_ME":{
-    "TITLE": "Giới thiệu bản thân.",
+    "TITLE": "Giới thiệu",
     "PARAGRAPH": [
       "In my <span class='underline'>1 years as a developer</span>, I seek to train every day. I have worked writing <span class='underline'>unit tests</span>, <span class='underline'>performing continuous integration</span>, and covering backend developer roles with <span class='underline'>Laravel and Mysql</span>. I have led teams having empathy, exercising motivation to partners, and setting plans and goals together.",
       "My skills also include implementing system improvements, optimizing sites, standardizing patterns, and suggesting and executing ideas that add value to the project I'm working on.",

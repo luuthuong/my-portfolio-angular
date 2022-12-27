@@ -1,6 +1,7 @@
 @use 'src/styles/index.scss' as *;
 
 .about {
+    font-family: $main-font;
     .about-description {
         margin-top: 30px;
         max-width: 480px;

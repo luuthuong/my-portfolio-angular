@@ -1,44 +1,49 @@
-<nav class="navbar main-navbar on-top" [class.nav-shadow]='this.pageYPosition>0'>
+<nav id="header"  class="navbar main-navbar on-top" [class.nav-shadow]='this.pageYPosition>0'>
     <div class="container position-relative">
-        <a class="navbar-brand text-light" [routerLink]="'inicio'">
+        <a  class="navbar-brand text-light" >
             <div class="cercles">
                 <div class="bouge cercle"></div>
                 <div class="cercle"></div>
                 <div class="bouge2 cercle"></div>
             </div>
-            <svg  class="position-absolute svg-logo">
+            <svg class="position-absolute svg-logo">
                 <filter id="flou">
                     <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur"></feGaussianBlur>
-                    <feColorMatrix in="blur" mode="matrix"
-                        values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="flou"></feColorMatrix>
+                    <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"
+                        result="flou"></feColorMatrix>
                 </filter>
             </svg>
         </a>
         <ul [@animateMenu] ngbNav #nav="ngbNav" class="menu-ul">
+            <li ngbNavItem (click)='analyticsService.sendAnalyticEvent("click_home", "menu", "click")'>
+                <a ngbNavLink (click)='scroll("banner")'>
+                    <span class="underline nav-text"> {{"HEADER.HOME" | translate}}</span></a>
+                <ng-template ngbNavContent>First content</ng-template>
+            </li>
             <li ngbNavItem (click)='analyticsService.sendAnalyticEvent("click_about", "menu", "click")'>
                 <a ngbNavLink (click)='scroll("about")'>
                     <span class="underline nav-text"> {{"HEADER.ABOUT_ME" | translate}}</span></a>
-                <ng-template ngbNavContent>First content</ng-template>
+                <ng-template ngbNavContent>Second content</ng-template>
             </li>
             <li ngbNavItem (click)='analyticsService.sendAnalyticEvent("click_experience", "menu", "click")'>
                 <a ngbNavLink (click)='scroll("jobs")'>
                     <span class="underline nav-text"> {{"HEADER.EXPERIENCE" | translate}}</span></a>
-                <ng-template ngbNavContent>Second content</ng-template>
+                <ng-template ngbNavContent>Third content</ng-template>
             </li>
             <li ngbNavItem (click)='analyticsService.sendAnalyticEvent("click_jobs", "menu", "click")'>
                 <a ngbNavLink (click)='scroll("proyects")'>
                     <span class="underline nav-text"> {{"HEADER.PROJECT" | translate}}</span></a>
-                <ng-template ngbNavContent>Second content</ng-template>
+                <ng-template ngbNavContent>Fourth content</ng-template>
             </li>
             <li ngbNavItem (click)='analyticsService.sendAnalyticEvent("click_contact", "menu", "click")'>
                 <a ngbNavLink (click)='scroll("contact")'>
                     <span class="underline nav-text"> {{"HEADER.CONTACT" | translate}}</span></a>
-                <ng-template ngbNavContent>Second content</ng-template>
+                <ng-template ngbNavContent>Fifth content</ng-template>
             </li>
-            <li ngbNavItem>
-                <a matRipple (click)="downloadCV()" class="main-btn cv-btn" ngbNavLink>
-                    {{"HEADER.RESUME" | translate}}
-                </a>
+            <li class="li-action" ngbNavItem>
+                <app-button-custom customClass="btn-action-mobile" title=" {{'HEADER.RESUME' | translate}}" (onClickEvent)="downloadCV()">
+                    <i class="fa fa-download"></i>
+                </app-button-custom>
             </li>
             <li>
                 <div ngbDropdown class="d-inline-block">
@@ -94,6 +99,11 @@
             <aside [class.aside-show]='responsiveMenuVisible' [class.nav-shadow]='this.pageYPosition>0' class="on-top">
                 <nav>
                     <ol>
+                        <li (click)='analyticsService.sendAnalyticEvent("click_home", "menu", "click")'>
+                            <a (click)='scroll("banner")'>
+                                {{"HEADER.HOME" | translate}}
+                            </a>
+                        </li>
                         <li (click)='analyticsService.sendAnalyticEvent("click_about", "menu", "click")'>
                             <a (click)='scroll("about")'>
                                 {{"HEADER.ABOUT_ME" | translate}}
@@ -115,9 +125,9 @@
                             </a>
                         </li>
                         <li>
-                            <button mat-button class="btn-action" (click)="downloadCV()">
-                                {{"HEADER.RESUME" | translate}}
-                            </button>
+                            <app-button-custom customClass="btn-action-mobile" title=" {{'HEADER.RESUME' | translate}}" (onClickEvent)="downloadCV()">
+                                <i class="fa fa-download"></i>
+                            </app-button-custom>
                         </li>
                         <li>
                             <div>{{"LANG.CHOOSE_LANG" | translate}}</div>

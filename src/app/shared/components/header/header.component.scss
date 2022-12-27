@@ -10,7 +10,14 @@
     }
 
     .menu-ul {
+        align-items: center;
         li {
+            &.li-action{
+                min-width: 160px;
+            }
+            &:last-child{
+                min-width: 165px;
+            }
             margin: 0px 13px;
             transition: all .3s ease;
         }
@@ -22,6 +29,10 @@
         li:last-child {
             margin-right: 0px;
         }
+    }
+
+    ::ng-deep .btn-action-mobile{
+        padding: .5em 1.5em;
     }
 
     .menu-responsive {
@@ -36,7 +47,7 @@
         visibility: visible;
         outline: 0px;
         transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
-
+        
         aside {
             padding: 0 !important;
         }
@@ -300,7 +311,6 @@
     padding-left: 16px;
     padding-right: 16px;
     padding-bottom: 4px;
-    background: $bg-white;
     border-radius: 5px;
     cursor: pointer;
 }

@@ -1,9 +1,11 @@
+@use 'src/styles/index' as *;
+
 .fancy {
     background-color: transparent;
-    border: 2px solid #000;
+    border: 2px solid $bg-dark;
     border-radius: 4px;
     box-sizing: border-box;
-    color: #fff;
+    color: $bg-white;
     cursor: pointer;
     display: inline-block;
     font-weight: 700;
@@ -23,7 +25,7 @@
         content: " ";
         width: 1.5625rem;
         height: 2px;
-        background: black;
+        background: $bg-dark;
         top: 50%;
         left: 1.5em;
         position: absolute;
@@ -34,11 +36,11 @@
 
     &:hover {
         color: white;
-        background: black;
+        background: $bg-dark;
 
         &::before {
             width: 0.9375rem;
-            background: white;
+            background: $bg-white;
         }
 
         .bottom-key-1,
@@ -53,7 +55,7 @@
         }
 
         .text {
-            color: white;
+            color: $bg-white;
             padding-left: 1.5em;
         }
     }
@@ -67,7 +69,7 @@
         transition: all 0.3s ease-in-out;
         text-transform: uppercase;
         text-decoration: none;
-        color: black;
+        color: $bg-dark;
     }
 
     .top-key {
@@ -99,4 +101,7 @@
         background: #e8e8e8;
         transition: width 0.5s ease-out, right 0.3s ease-out;
     }
+}
+::ng-deep .mat-button-focus-overlay {
+    background-color: transparent !important;
 }
