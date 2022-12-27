@@ -14,82 +14,47 @@
     "VI": "Tiếng Việt"
   },
 	"BANNER": {
-		"TITLE": "Hello! My name is",
-		"DESCRIPTION": "Tôi đã có  <span class='underline cursor-pointer text-bold'>1 năm kinh nghiệm</span> phát triển hệ thống, giao diện , các giải pháp để tạo tối ưu hóa web tốt hơn. Tôi dành riêng để viết và tái cấu trúc mã sạch, có thể tái sử dụng và có thể mở rộng <span class='underline cursor-pointer text-bold'>Angular</span> và <span class='underline cursor-pointer text-bold'>.NET</span>.",
+		"TITLE": "Xin chào bạn! Mình tên là",
+		"DESCRIPTION": "Hiện tại, mình đã có  <span class='underline cursor-pointer text-bold'>1 năm kinh nghiệm</span> phát triển hệ thống, giao diện , các giải pháp để tạo tối ưu hóa web tốt hơn. Tôi dành riêng để viết và tái cấu trúc mã sạch, có thể tái sử dụng và có thể mở rộng <span class='underline cursor-pointer text-bold'>Angular</span> và <span class='underline cursor-pointer text-bold'>.NET</span>.",
 		"ACTION": "Get in touch"
 	},
-	"AboutMe.Title": "Acerca de mi",
-	"AboutMe.Paragraphs": [
-		"En mis <span class='underline'>4 años como desarrollador</span> busco capacitarme cada día. Al mismo tiempo he trabajado escribiendo <span class='underline'>pruebas unitarias</span>, realizando <span class='underline'>integración continua</span> y también cubriendo roles de backend developer con <span class='underline'>Laravel y Mysql</span>. También he liderado equipos teniendo empatía, ejerciendo motivación a compañeros y estableciendo planes y metas en conjunto.",
-		"Mis capacidades también incluyen implementar mejoras en sistemas, optimizar sitios, estandarizar patrones y sugerir y ejecutar ideas que añadan valor al proyecto en el que este trabajando.",
-		"Algunas de las tecnologías en las que me he capacitado y trabajado incluyen (pero no se limitan) a:"
-	],
+	"ABOUT_ME":{
+    "TITLE": "Giới thiệu bản thân.",
+    "PARAGRAPH": [
+      "In my <span class='underline'>1 years as a developer</span>, I seek to train every day. I have worked writing <span class='underline'>unit tests</span>, <span class='underline'>performing continuous integration</span>, and covering backend developer roles with <span class='underline'>Laravel and Mysql</span>. I have led teams having empathy, exercising motivation to partners, and setting plans and goals together.",
+      "My skills also include implementing system improvements, optimizing sites, standardizing patterns, and suggesting and executing ideas that add value to the project I'm working on.",
+      "Some of the technologies that I have trained and worked on include (but are not limited to):"
+    ]
+  },
 
-	"Experience.Title": "Experiencia",
-	"Experience.Jobs": [
-		{
-			"Tab": "Proyex",
-			"Title": "Fullstack developer",
-			"Date": "Diciembre 2019 - Actualidad",
-			"Description": [
-				"Creación y mantenimiento de una plataforma de monitorio con gráficos en Wordpress.",
-				"Programación funcional en plantillas y plugins para añadir las características necesarias de monitoreo.",
-				"Implementación de integración continua y respaldos diarios.",
-				"Creación y mantenimiento de una segunda plataforma de Monitoreo Realizada en Angular, Angular Material, Laravel, Mysql, RxJS, Sass con gráficos (configurables), sistema de alarmas, y gestión de usuarios y configuración de parámetros generales.",
-				"Reuniones de planificación en informes."
-			]
-		},
-		{
-			"Tab": "Freelancer",
-			"Title": "Independiente",
-			"Date": "Mayo 2016 - Actualidad",
-			"Description": [
-				"Implementacion de mejoras continuas, trabajando en frontend y backend.",
-				"Creacion de plataformas con Angular, Laravel, Wordpress programadas con paradigmas de programación funcional, reactiva y orientada a objetos.",
-				"Automatizacion de procesos con estructuras de datos.",
-				"Maquetacion de diseños con SASS, Bootstrap, Materialize, Bulma, etc."
-			]
-		},
-		{
-			"Tab": "Moebius",
-			"Title": "FullStack developer",
-			"Date": "Julio 2017 - Octubre 2018",
-			"Description": [
-				"Liderando un equipo de 4 personas en el desarrollo de una plataforma de gestión de Datos de turismo hecha en Angular, Laravel y MySQL. ",
-				"Implementacion de CI/CD en Azure. Refactorizando y optimizando tiempos de carga de la aplicación.",
-				"Codificación de peticiones a API con RxJS.",
-				"Crecion de modulos con formularios reactivos complejos",
-				"Redacción de informes semanales acerca de metas y planes."
-			]
-		},
-		{
-			"Tab": "TechLatam",
-			"Title": "Frontend developer",
-			"Date": "Febrero 2016 - Mayo 2017",
-			"Description": [
-				"Creación de plantillas de wordpress con ACF, programación funcional en Javascript / jQuery, estilos en SASS",
-				"integración de mejoras en diseño y tiempos de carga de plantillas.",
-				"Comunicación efectiva con equipo de diseño, trabajando con Avocode / Figma"
-			]
-		},
-		{
-			"Tab": "CANTV",
-			"Title": "Analista de sistema",
-			"Date": "Noviembre 2015 - Diciembre 2016",
-			"Description": [
-				"Programacion de nuevas funcionalidades para una plataforma de gestión de empleados existente realizada en Angular y ExpressJS",
-				"Realizar refactorización de código antiguo. Asegurar la compatibilidad de cada dependencia en cada actualización, junto también con la actualización regular de Angular."
-			]
-		},
-		{
-			"Tab": "IEP",
-			"Title": "Profesor de Inglés",
-			"Date": "Enero 2015 - Julio 2015",
-			"Description": [
-				"Enseñando ingles a nivel básico a una matrícula de más de 200 alumnos."
-			]
-		}
-	],
+	"EXPERIENCE": {
+		"TITLE": "Experience",
+		"JOB": [
+			{
+				"TAB": "Project",
+				"TITLE": "Fullstack developer",
+				"DATE": "April 2019 - Present",
+				"DESCRIPTION": [
+					"Creation and maintenance of a monitoring platform with graphics in WordPress.",
+					"Functional programming in templates and plugins to add the necessary monitoring features.",
+					"Implementation of continuous integration and daily backups.",
+					"Creation and maintenance of a second Monitoring Platform Done in Angular, Angular Material, .NET , Mysql, RxJS, Sass with graphics (configurable), alarm system, and user management and configuration of general parameters.",
+					"Planning meetings in reports."
+				]
+			},
+			{
+				"TAB": "Freelancer",
+				"TITLE": "FrontEnd developer",
+				"DATE": "April 2019 - July 2019",
+				"DESCRIPTION": [
+					"Implementing continuous improvements, working on frontend and backend.",
+				"Creating platforms with Angular, Laravel, ExpressJS, WordPress programmed with functional, reactive, and object-oriented programming paradigms.",
+				"Automation of processes with data structures.",
+				"Design layout with SASS, Bootstrap, Materialize, Bulma, etc."
+				]
+			}
+		]
+	},
 
 	"FeatureProjects.Title": "Mis proyectos",
 	"FeatureProjects.Label": "Proyecto Destacado",

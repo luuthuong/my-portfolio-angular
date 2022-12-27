@@ -34,7 +34,6 @@ export class HeaderComponent extends BaseComponentComponent implements OnInit {
 
   constructor(
     private router: Router,
-    public analyticsService: AnalyticsService,
     public languageService: LanguageService
   ) {
     super();

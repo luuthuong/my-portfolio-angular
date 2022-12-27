@@ -3,7 +3,7 @@
 .main-navbar {
     height: 70px;
     background: #FFFFFF;
-    font-family: $CodeFont;
+    font-family: $code-font;
 
     .btn-action {
         color: $text-dark;
@@ -52,11 +52,12 @@
             }
 
             .language-container {
-                &.group{
+                &.group {
                     width: 100%;
                     @include alignFlex();
                     gap: 4px;
                 }
+
                 width: fit-content;
                 height: 30px;
                 margin-bottom: 5px;
@@ -93,7 +94,7 @@
         position: relative;
         right: -625px;
         margin-left: auto;
-        font-family: $CodeFont;
+        font-family: $code-font;
         box-shadow: 2px 0 20px 0 rgba(82, 82, 83, 0.7);
         padding: 25px;
         transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
@@ -292,7 +293,7 @@
     color: inherit;
     margin: 0 10px;
     font-size: 13px;
-    font-family: $CodeFont;
+    font-family: $code-font;
 }
 
 .language-container {
@@ -358,8 +359,92 @@
     visibility: hidden;
 }
 
+.position-relative{
+    position: relative;
+}
+
 .language-container-selector.active {
     .arrow-active {
         visibility: inherit;
     }
 }
+
+/* Logo */
+
+.svg-logo{
+    width: 0;
+    height: 0;
+}
+
+.cercles {
+    filter: url(#flou);
+}
+
+.cercles div {
+    background: #50577A;
+}
+
+.cercles div:nth-child(2) {
+    background: #1B2430;
+}
+
+.cercles div:nth-child(3) {
+    background: #393E46;
+}
+
+
+.cercle {
+    border-radius: 50%;
+    background: black;
+    height: 20px;
+    width: 20px;
+    margin-top: 50%;
+}
+
+
+.cercles {
+    top: -35px;
+    left: 10px;
+    position: absolute;
+}
+
+.bouge {
+    animation: animcercle 3s linear infinite;
+}
+
+.bouge2 {
+    animation: animcerclo 5s linear infinite;
+}
+
+
+@keyframes animcercle {
+    0% {
+        transform: translate(0%);
+    }
+
+    50% {
+        transform: translate(0%, 100%);
+    }
+
+    100% {
+        transform: translate(0%);
+    }
+
+}
+
+@keyframes animcerclo {
+    0% {
+        transform: translate(0%);
+    }
+
+    50% {
+        transform: translate(0%, -100%);
+    }
+
+    100% {
+        transform: translate(0%);
+    }
+
+}
+
+/* End logo */

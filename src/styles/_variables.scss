@@ -1,20 +1,30 @@
-$Navy         : #0a192f;
-$LightNavy    : #112240;
+$Navy : #0a192f;
+$LightNavy : #112240;
 $LightestNavy : #303C55;
-$Slate        : #8892b0;
-$LightSlate   : #a8b2d1;
+$Slate : #8892b0;
+$LightSlate : #a8b2d1;
 $LightestSlate: #ccd6f6;
-$White        : #e6f1ff;
-$Green        : #64ffda;
-$GreenOpacity : rgba(100,255,218,0.07);
+$White : #e6f1ff;
+$Green : #64ffda;
+$GreenOpacity : rgba(100, 255, 218, 0.07);
+
 $bg-white: #FAFAFA;
-$text-white: #FFFFFF;
-$text-dark: #222222;
-$bg-main:#e0e0e0;
-$bg-dark: #33313B ;
+$bg-main: #e0e0e0;
+$bg-gradient: linear-gradient(145deg, #cacaca, #f0f0f0);
+$bg-dark: #33313B;
+$bg-primary: #2B3A55;
+$bg-light-blue:  #6B7AA1;
 $bg-highlight: #393E46;
 $bg-gradient: linear-gradient(145deg, #cacaca, #f0f0f0);
-$box-shadow:  20px 20px 60px #bebebe,
--20px -20px 60px #ffffff;
-$MainFont: Calibre,San Francisco,SF Pro Text,-apple-system,system-ui,BlinkMacSystemFont,Roboto,Helvetica Neue,Segoe UI,Arial,sans-serif;
-$CodeFont: SF Mono, Fira Code, Fira Mono, Roboto Mono, Lucida Console, Monaco, Monospace;
+// Text
+$text-header: #181D31;
+$text-sub-title: #393E46;
+$text-icon:  #6B7AA1;
+$text-white: #FFFFFF;
+$text-dark: #222222;
+$box-shadow: 20px 20px 60px #bebebe,
+    -20px -20px 60px #ffffff;
+$box-shadow-concave: 20px 20px 40px #c1c1c1,
+    -20px -20px 40px #ffffff;
+$MainFont: Calibre, San Francisco, SF Pro Text, -apple-system, system-ui, BlinkMacSystemFont, Roboto, Helvetica Neue, Segoe UI, Arial, sans-serif;
+$code-font: SF Mono, Fira Code, Fira Mono, Roboto Mono, Lucida Console, Monaco, Monospace;

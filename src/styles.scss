@@ -14,7 +14,7 @@
         border-radius: 8px;
     }
     &::-webkit-scrollbar-track {
-		background: transparent;
+		background: transparent;  
 	}
 }
 body {
@@ -40,7 +40,7 @@ body {
 }
 
 .code-font {
-    font-family: $CodeFont;
+    font-family: $code-font;
 
 }
 
@@ -63,15 +63,15 @@ body {
     white-space: nowrap;
     font-size: 32px;
     font-weight: 600;
-    color: $LightestSlate;
+    color: $text-header;
     font-family: $MainFont;
     margin: 0 0 10px 0;
 
     .n-section-title {
         margin-right: 10px;
-        font-family: $CodeFont;
+        font-family: $code-font;
         font-weight: normal;
-        color: $Green;
+        color: $text-sub-title;
         font-size: 20px;
         position: relative;
         bottom: 4px;
@@ -97,7 +97,7 @@ body {
     border: 1px solid $bg-highlight;
     border-radius: 3px;
     font-size: 13px;
-    font-family: $CodeFont;
+    font-family: $code-font;
     line-height: 1;
     -webkit-text-decoration: none;
     text-decoration: none;

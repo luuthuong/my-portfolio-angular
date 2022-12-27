@@ -1,36 +1,44 @@
 @use 'src/styles/index.scss' as *;
-.banner{
+
+.banner {
     min-height: 100vh;
+
     ::ng-deep .mat-button-focus-overlay {
-        background-color: transparent!important;
+        background-color: transparent !important;
     }
-    .container{
+
+    .container {
         display: table;
         height: 100vh;
-        .btn-action{
+
+        .btn-action {
             transition: all .3s ease;
-            &:hover{
+
+            &:hover {
                 background: $bg-highlight;
                 color: $text-white;
             }
         }
-        .section-box-banner{
+
+        .section-box-banner {
             display: table-cell;
             vertical-align: middle;
 
-            .content{
+            .content {
                 margin-top: 50px;
             }
-            h1{
-    
+
+            h1 {
+
                 color: $text-dark;
                 margin: 0 0 20px 3px;
                 font-size: 16px;
                 font-weight: normal;
-                font-family: $CodeFont;
+                font-family: $code-font;
             }
 
-            h2, h3 {
+            h2,
+            h3 {
                 font-weight: 600;
                 font-size: 80px;
                 line-height: 1.1;
@@ -38,26 +46,25 @@
                 font-family: $MainFont;
             }
 
-            h2{
-                color: $LightestSlate;
-            }
-            h3{  
-                color: $Slate;
+            h2 {
+                color: $text-header;
             }
 
-            .banner-description{
+            h3 {
+                color: $text-sub-title;
+            }
+
+            .banner-description {
                 margin-bottom: 70px;
             }
 
-            p{
+            p {
                 max-width: 500px;
             }
 
-            .div-btn-banner{
+            .div-btn-banner {
                 height: 43px;
             }
         }
-
-       
-    }    
+    }
 }

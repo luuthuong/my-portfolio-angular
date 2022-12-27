@@ -1,27 +1,38 @@
-<nav  class="navbar main-navbar on-top" [class.nav-shadow]='this.pageYPosition>0'>
-    <div class="container">
+<nav class="navbar main-navbar on-top" [class.nav-shadow]='this.pageYPosition>0'>
+    <div class="container position-relative">
         <a class="navbar-brand text-light" [routerLink]="'inicio'">
-            <!-- <img src='https://img.freepik.com/free-vector/cute-cat-playing-hand-phone-cartoon-vector-icon-illustration-animal-technology-icon-concept-isolated-premium-vector-flat-cartoon-style_138676-4231.jpg?w=826&t=st=1672098971~exp=1672099571~hmac=8f56fdfa3c7a84f97b1bdc735c46a52c60412f37872eeb8759d980ed551fc276' width='25' /> -->
+            <div class="cercles">
+                <div class="bouge cercle"></div>
+                <div class="cercle"></div>
+                <div class="bouge2 cercle"></div>
+            </div>
+            <svg  class="position-absolute svg-logo">
+                <filter id="flou">
+                    <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur"></feGaussianBlur>
+                    <feColorMatrix in="blur" mode="matrix"
+                        values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="flou"></feColorMatrix>
+                </filter>
+            </svg>
         </a>
         <ul [@animateMenu] ngbNav #nav="ngbNav" class="menu-ul">
             <li ngbNavItem (click)='analyticsService.sendAnalyticEvent("click_about", "menu", "click")'>
-                <a ngbNavLink (click)='scroll("about")'><span class='nav-number'>01. </span> <span
-                        class="underline nav-text"> {{"HEADER.ABOUT_ME" | translate}}</span></a>
+                <a ngbNavLink (click)='scroll("about")'>
+                    <span class="underline nav-text"> {{"HEADER.ABOUT_ME" | translate}}</span></a>
                 <ng-template ngbNavContent>First content</ng-template>
             </li>
             <li ngbNavItem (click)='analyticsService.sendAnalyticEvent("click_experience", "menu", "click")'>
-                <a ngbNavLink (click)='scroll("jobs")'><span class='nav-number'>02. </span> <span
-                        class="underline nav-text"> {{"HEADER.EXPERIENCE" | translate}}</span></a>
+                <a ngbNavLink (click)='scroll("jobs")'>
+                    <span class="underline nav-text"> {{"HEADER.EXPERIENCE" | translate}}</span></a>
                 <ng-template ngbNavContent>Second content</ng-template>
             </li>
             <li ngbNavItem (click)='analyticsService.sendAnalyticEvent("click_jobs", "menu", "click")'>
-                <a ngbNavLink (click)='scroll("proyects")'><span class='nav-number'>03. </span> <span
-                        class="underline nav-text"> {{"HEADER.PROJECT" | translate}}</span></a>
+                <a ngbNavLink (click)='scroll("proyects")'>
+                    <span class="underline nav-text"> {{"HEADER.PROJECT" | translate}}</span></a>
                 <ng-template ngbNavContent>Second content</ng-template>
             </li>
             <li ngbNavItem (click)='analyticsService.sendAnalyticEvent("click_contact", "menu", "click")'>
-                <a ngbNavLink (click)='scroll("contact")'><span class='nav-number'>04. </span> <span
-                        class="underline nav-text"> {{"HEADER.CONTACT" | translate}}</span></a>
+                <a ngbNavLink (click)='scroll("contact")'>
+                    <span class="underline nav-text"> {{"HEADER.CONTACT" | translate}}</span></a>
                 <ng-template ngbNavContent>Second content</ng-template>
             </li>
             <li ngbNavItem>
@@ -34,11 +45,13 @@
                     <div class="language-container" id="dropdownForm1" ngbDropdownToggle>
                         <img *ngIf='languageFormControl.value == "en"' width="20px"
                             src="https://www.worldometers.info/img/flags/us-flag.gif" alt="{{'LANG.EN' | translate}}">
-                        <span *ngIf='languageFormControl.value == "en"' class="flag-text">{{'LANG.EN' | translate}}</span>
+                        <span *ngIf='languageFormControl.value == "en"' class="flag-text">{{'LANG.EN' |
+                            translate}}</span>
 
                         <img *ngIf='languageFormControl.value == "vi"' width="20px"
                             src="assets/icons/vietnam-flag-icon.svg" alt="{{'LANG.VI' | translate}}">
-                        <span *ngIf='languageFormControl.value == "vi"' class="flag-text">{{'LANG.VI' | translate}}</span>
+                        <span *ngIf='languageFormControl.value == "vi"' class="flag-text">{{'LANG.VI' |
+                            translate}}</span>
                         <svg class='arrow-language' xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                             viewBox="0 0 24 24">
                             <path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z" />
@@ -74,7 +87,7 @@
             </li>
         </ul>
         <div class="menu-wrapper">
-            <div  [class.animate]='responsiveMenuVisible' (click)='responsiveMenuVisible = !responsiveMenuVisible'
+            <div [class.animate]='responsiveMenuVisible' (click)='responsiveMenuVisible = !responsiveMenuVisible'
                 class="hamburger-menu"></div>
         </div>
         <div class="menu-responsive" [ngStyle]="{'pointer-events': !responsiveMenuVisible ? 'none' : '' }">
@@ -83,26 +96,26 @@
                     <ol>
                         <li (click)='analyticsService.sendAnalyticEvent("click_about", "menu", "click")'>
                             <a (click)='scroll("about")'>
-                                <span>01. </span> {{"HEADER.ABOUT_ME" | translate}}
+                                {{"HEADER.ABOUT_ME" | translate}}
                             </a>
                         </li>
                         <li (click)='analyticsService.sendAnalyticEvent("click_experience", "menu", "click")'>
                             <a (click)='scroll("jobs")'>
-                                <span>02. </span> {{"HEADER.EXPERIENCE" | translate}}
+                                {{"HEADER.EXPERIENCE" | translate}}
                             </a>
                         </li>
                         <li (click)='analyticsService.sendAnalyticEvent("click_jobs", "menu", "click")'>
                             <a (click)='scroll("proyects")'>
-                                <span>03. </span> {{"HEADER.PROJECT" | translate}}
+                                {{"HEADER.PROJECT" | translate}}
                             </a>
                         </li>
                         <li (click)='analyticsService.sendAnalyticEvent("click_contact", "menu", "click")'>
                             <a (click)='scroll("proyects")'>
-                                <span>04. </span> {{"HEADER.CONTACT" | translate}}
+                                {{"HEADER.CONTACT" | translate}}
                             </a>
                         </li>
                         <li>
-                            <button mat-button class="btn-action" (click)="downloadCV()" >
+                            <button mat-button class="btn-action" (click)="downloadCV()">
                                 {{"HEADER.RESUME" | translate}}
                             </button>
                         </li>
@@ -114,7 +127,8 @@
                                 <div (click)='changeLanguage("vi")'
                                     class="language-container language-container-selector active"
                                     [class.active]='languageFormControl.value == "vi"'>
-                                    <img width="20px" src="assets/icons/vietnam-flag-icon.svg" alt="{{'LANG.VI' | translate}}">
+                                    <img width="20px" src="assets/icons/vietnam-flag-icon.svg"
+                                        alt="{{'LANG.VI' | translate}}">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                         class="bi bi-check2 arrow-active" viewBox="0 0 16 16">
                                         <path
@@ -124,7 +138,8 @@
                                 <div (click)='changeLanguage("en")'
                                     class="language-container language-container-selector"
                                     [class.active]='languageFormControl.value == "en"'>
-                                    <img src="https://www.worldometers.info/img/flags/us-flag.gif" alt="{{'LANG.EN' | translate}}">
+                                    <img src="https://www.worldometers.info/img/flags/us-flag.gif"
+                                        alt="{{'LANG.EN' | translate}}">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                         class="bi bi-check2 arrow-active" viewBox="0 0 16 16">
                                         <path

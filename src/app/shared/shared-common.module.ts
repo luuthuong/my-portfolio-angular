@@ -6,13 +6,15 @@ import { FooterComponent } from './components/footer/footer.component';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { NgbDropdownModule, NgbNavModule } from '@ng-bootstrap/ng-bootstrap';
 import { MaterialModule } from './material.module';
+import { ButtonCustomComponent } from './components/button-custom/button-custom.component';
 
 
 
 @NgModule({
   declarations: [
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    ButtonCustomComponent
   ],
   imports: [
     CommonModule,
@@ -25,7 +27,8 @@ import { MaterialModule } from './material.module';
   exports:[
     HeaderComponent,
     FooterComponent,
-    MaterialModule
+    MaterialModule,
+    ButtonCustomComponent
   ],
   providers: [
     TranslateService

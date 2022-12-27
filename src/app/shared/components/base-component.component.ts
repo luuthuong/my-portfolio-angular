@@ -1,10 +1,15 @@
+import { AppInjector } from './../../services/app-injector.service';
 import { Component, Injectable, OnDestroy, OnInit } from '@angular/core';
 import { Subject } from 'rxjs';
+import { AnalyticsService } from 'src/app/services/analytics.service';
 
 @Injectable()
 export class BaseComponentComponent implements OnDestroy {
   ngUnSubcribe = new Subject<void>();
-  constructor() { }
+  analyticsService: AnalyticsService;
+  constructor() { 
+    this.analyticsService = AppInjector.getService(AnalyticsService);
+  }
   ngOnDestroy(): void {
     this.ngUnSubcribe.next();
     this.ngUnSubcribe.complete();

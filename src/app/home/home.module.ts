@@ -12,6 +12,7 @@ import { ContactComponent } from './contact/contact.component';
 import { SharedCommonModule } from '../shared/shared-common.module';
 import { TranslateModule } from '@ngx-translate/core';
 import { CarouselModule } from 'ngx-owl-carousel-o';
+import { NgbNavModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -29,8 +30,8 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
     HomeRoutingModule,
     SharedCommonModule,
     TranslateModule,
-    CarouselModule
-
+    CarouselModule,
+    NgbNavModule
   ]
 })
 export class HomeModule { }
