@@ -1,8 +1,10 @@
+import { takeUntil } from 'rxjs/operators';
 import { animate, query, stagger, style, transition, trigger } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
+import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/compat/firestore';
 import { AnalyticsService } from 'src/app/services/analytics.service';
 import { BaseComponentComponent } from 'src/app/shared/components/base-component.component';
-
+export interface Item { name: string; }
 @Component({
   selector: 'app-banner',
   templateUrl: './banner.component.html',
@@ -24,10 +26,16 @@ import { BaseComponentComponent } from 'src/app/shared/components/base-component
   ]
 })
 export class BannerComponent extends BaseComponentComponent implements OnInit {
-
+  private itemDocs !: AngularFirestoreDocument<Item>;
   constructor(
+    private fireStore : AngularFirestore
   ) {
     super();
+    this.itemDocs = this.fireStore.doc<Item>('Intro/1');
+    this.itemDocs.valueChanges()
+    .pipe(takeUntil(this.ngUnSubcribe))
+    .subscribe(response =>{
+    })
   }
 
   ngOnInit(): void {
