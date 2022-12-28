@@ -13,10 +13,10 @@ export class ProjectComponent extends BaseComponentComponent implements OnInit {
     mouseDrag: true,
     touchDrag: true,
     pullDrag: false,
-    navSpeed: 700,
+    navSpeed: 1000,
     items: 1,
     autoplay: true,
-    autoplayTimeout:3000
+    autoplayTimeout:5000
   }
   @ViewChild('imgContainer') imgContainer!: ElementRef;
   constructor() { 

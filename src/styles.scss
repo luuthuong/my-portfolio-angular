@@ -133,22 +133,24 @@ a {
     display: inline-block;
     position: relative;
     color: $text-dark !important;
-}
-
-.underline:after {
-    background: none repeat scroll 0 0 transparent;
-    bottom: 3px;
-    content: "";
-    display: block;
-    height: 1px;
-    left: 50%;
-    position: absolute;
-    background: $bg-highlight;
-    transition: width 0.3s ease 0s, left 0.3s ease 0s;
-    width: 0%;
-}
-
-.underline:hover:after {
-    width: 100%;
-    left: 0;
+    transition: all .3s ease;
+    &:after {
+        background: none repeat scroll 0 0 transparent;
+        bottom: 3px;
+        content: "";
+        display: block;
+        height: 1px;
+        left: 50%;
+        position: absolute;
+        background: $bg-highlight;
+        transition: width 0.3s ease 0s, left 0.3s ease 0s;
+        width: 0%;
+    }
+    &:hover{
+        font-weight: 600;
+        &:after {
+            width: 100%;
+            left: 0;
+        }
+    }
 }

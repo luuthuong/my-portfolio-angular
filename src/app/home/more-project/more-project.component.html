@@ -1,1 +1,48 @@
-<p>more-project works!</p>
+<section class="section more-projects">
+    <div class="container">
+        <div class="section-box">
+            <div class="">
+                <h3 class="section-title">
+                    {{"OTHER_PROJECT.TITLE" | translate}}
+                </h3>
+            </div>
+            <div class="mt-5">
+                <div class="row p-0">
+                    <div *ngFor='let project of "OTHER_PROJECT.PROJECTS" | translate; let i = index'
+                        class="col-12 col-md-6 col-lg-6 col-xl-4 project-col" data-aos="fade-up"
+                        data-aos-duration="1000">
+                        <div class="more-project-box">
+                            <div class="row w-100 text-left m-0 p-0">
+                                <div class="col-6 p-0">
+                                    <div matRipple class="img" style="--bg-image: url('{{project.IMGS[0]}}');"></div>
+                                </div>
+                                <div class="col-6 d-flex p-0 justify-content-end">
+                                    <a matRipple class="link-icon"
+                                        (click)='analyticsService.sendAnalyticEvent("click_project", "projects", "click")'
+                                        style='color: inherit' [href]="project['DEMO_LINK']" target="_blank"><i
+                                            id="demoLink" class="fas fa-external-link-alt"></i></a>
+                                    <a matRipple class="link-icon ml-1"
+                                        (click)='analyticsService.sendAnalyticEvent("click_project", "projects", "click")'
+                                        style='color: inherit' [href]="project['GIT_LINK']" target="_blank"><i
+                                            id="ghLink" class=" fab fa-github"></i></a>
+                                </div>
+                                <h5 class="other-project-title mt-4">{{project.TITLE}}</h5>
+                                <p class="other-project-description">
+                                    {{project.DESCRIPTION}}
+                                </p>
+                            </div>
+                            <div>
+                                <ul class="more-projects-skills">
+                                    <li *ngFor='let technology of project.TECHNOLOGIES'>
+                                        <span class="underline user-select-none">{{technology}}</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>

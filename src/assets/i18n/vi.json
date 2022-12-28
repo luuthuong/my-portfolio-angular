@@ -15,14 +15,14 @@
 		"VI": "Tiếng Việt"
 	},
 	"BANNER": {
-		"TITLE": "Xin chào bạn! Mình tên là",
+		"TITLE": "Chào bạn! Mình tên là",
 		"DESCRIPTION": "Hiện tại, mình đã có  <span class='underline cursor-pointer text-bold'>1 năm kinh nghiệm</span> phát triển hệ thống, giao diện , các giải pháp để tạo tối ưu hóa web tốt hơn. Tôi dành riêng để viết và tái cấu trúc mã sạch, có thể tái sử dụng và có thể mở rộng <span class='underline cursor-pointer text-bold'>Angular</span> và <span class='underline cursor-pointer text-bold'>.NET</span>.",
-		"ACTION": "Get in touch"
+		"ACTION": "Liên lạc"
 	},
 	"ABOUT_ME": {
 		"TITLE": "Giới thiệu",
 		"PARAGRAPH": [
-			"In my <span class='underline'>1 years as a developer</span>, I seek to train every day. I have worked writing <span class='underline'>unit tests</span>, <span class='underline'>performing continuous integration</span>, and covering backend developer roles with <span class='underline'>Laravel and Mysql</span>. I have led teams having empathy, exercising motivation to partners, and setting plans and goals together.",
+			"In my <span class='underline'>1 years as a developer</span>, I seek to train every day. I have worked writing <span class='underline'>unit tests</span>, <span class='underline'>performing continuous integration</span>, and covering backend developer roles with <span class='underline'>  MSSQL Server</span>. I have led teams having empathy, exercising motivation to partners, and setting plans and goals together.",
 			"My skills also include implementing system improvements, optimizing sites, standardizing patterns, and suggesting and executing ideas that add value to the project I'm working on.",
 			"Some of the technologies that I have trained and worked on include (but are not limited to):"
 		]
@@ -39,7 +39,7 @@
 					"Creation and maintenance of a monitoring platform with graphics in WordPress.",
 					"Functional programming in templates and plugins to add the necessary monitoring features.",
 					"Implementation of continuous integration and daily backups.",
-					"Creation and maintenance of a second Monitoring Platform Done in Angular, Angular Material, .NET , Mysql, RxJS, Sass with graphics (configurable), alarm system, and user management and configuration of general parameters.",
+					"Creation and maintenance of a second Monitoring Platform Done in Angular, Angular Material, .NET ,  MSSQL Server, RxJS, Sass with graphics (configurable), alarm system, and user management and configuration of general parameters.",
 					"Planning meetings in reports."
 				]
 			},
@@ -49,7 +49,7 @@
 				"DATE": "April 2019 - July 2019",
 				"DESCRIPTION": [
 					"Implementing continuous improvements, working on frontend and backend.",
-					"Creating platforms with Angular, Laravel, ExpressJS, WordPress programmed with functional, reactive, and object-oriented programming paradigms.",
+					"Creating platforms with Angular,  , ExpressJS, WordPress programmed with functional, reactive, and object-oriented programming paradigms.",
 					"Automation of processes with data structures.",
 					"Design layout with SASS, Bootstrap, Materialize, Bulma, etc."
 				]
@@ -64,11 +64,11 @@
 				"TITLE": "Agrourbana",
 				"DESCRIPTION": "Monitoring application made from scratch with auth module, <span class='underline'>configurable graphics</span>, <span class='underline'>configurable alarms</span>, and <span class='underline'>user management</span>. It also has feedback form logic for parameter configuration.",
 				"IMGS": [
-					"assets/images/agrourbana/agrourbana1.png",
-					"assets/images/agrourbana/agrourbana2.png",
-					"assets/images/agrourbana/agrourbana3.png",
-					"assets/images/agrourbana/agrourbana4.png",
-					"assets/images/agrourbana/agrourbana5.png"
+					"https://images.unsplash.com/photo-1671695063322-1cd606e2f049?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzOTM0NzV8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NzIyMDE4NTk&ixlib=rb-4.0.3&q=80",
+					"https://images.unsplash.com/photo-1671695063322-1cd606e2f049?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzOTM0NzV8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NzIyMDE4NTk&ixlib=rb-4.0.3&q=80",
+					"https://images.unsplash.com/photo-1671695063322-1cd606e2f049?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzOTM0NzV8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NzIyMDE4NTk&ixlib=rb-4.0.3&q=80",
+					"https://images.unsplash.com/photo-1671695063322-1cd606e2f049?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzOTM0NzV8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NzIyMDE4NTk&ixlib=rb-4.0.3&q=80",
+					"https://images.unsplash.com/photo-1671695063322-1cd606e2f049?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzOTM0NzV8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NzIyMDE4NTk&ixlib=rb-4.0.3&q=80"
 				],
 				"TECHNOLOGIES": [
 					"Angular",
@@ -82,14 +82,14 @@
 				"TITLE": "Tu super plan",
 				"DESCRIPTION": "Health plan quote that has a search engine with which advanced queries are made. Plans are displayed based on the user's age, monthly income, and location. It has <span class='underline'>online chat</span, <span class='underline'>contact form</span>, <span class='underline'>notification system by whatsapp and mail</span>, <span class='underline'>auth</span>, and <span class='underline'>internet information management through the role of administrator.</span>",
 				"IMGS": [
-					"assets/images/tusuperplan/tusuperplan1.png",
-					"assets/images/tusuperplan/tusuperplan2.png",
-					"assets/images/tusuperplan/tusuperplan3.png",
-					"assets/images/tusuperplan/tusuperplan4.png",
-					"assets/images/tusuperplan/tusuperplan5.png"
+					"https://images.unsplash.com/photo-1671509774803-1640e8853b50?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzOTM0NzV8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NzIyMDE4OTA&ixlib=rb-4.0.3&q=80",
+					"https://images.unsplash.com/photo-1671509774803-1640e8853b50?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzOTM0NzV8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NzIyMDE4OTA&ixlib=rb-4.0.3&q=80",
+					"https://images.unsplash.com/photo-1671509774803-1640e8853b50?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzOTM0NzV8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NzIyMDE4OTA&ixlib=rb-4.0.3&q=80",
+					"https://images.unsplash.com/photo-1671509774803-1640e8853b50?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzOTM0NzV8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NzIyMDE4OTA&ixlib=rb-4.0.3&q=80",
+					"https://images.unsplash.com/photo-1671509774803-1640e8853b50?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzOTM0NzV8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NzIyMDE4OTA&ixlib=rb-4.0.3&q=80"
 				],
 				"TECHNOLOGIES": [
-					"Laravel",
+					" ",
 					"Angular",
 					"SASS",
 					"Angular Material",
@@ -100,21 +100,17 @@
 				"TITLE": "Proyexiot",
 				"DESCRIPTION": "Data monitoring platform belonging to water wells, tugboats, and various installations made from scratch with auth module, <span class='underline'>configurable graphics</span>, <span class='underline'>configurable alarms</span>, <span class='underline'>user management</span>, and <span class='underline'>geolocation with openlayers.</span>",
 				"IMGS": [
-					"assets/images/proyex/proyex1.png",
-					"assets/images/proyex/proyex2.png",
-					"assets/images/proyex/proyex3.png",
-					"assets/images/proyex/proyex4.png",
-					"assets/images/proyex/proyex5.png",
-					"assets/images/proyex/proyex6.png",
-					"assets/images/proyex/proyex7.png",
-					"assets/images/proyex/proyex8.png",
-					"assets/images/proyex/proyex9.png",
-					"assets/images/proyex/proyex10.png",
-					"assets/images/proyex/proyex11.png",
-					"assets/images/proyex/proyex12.png"
+					"https://images.unsplash.com/photo-1670258880099-f1f0bd41e44a?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzOTM0NzV8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NzIyMDE5MTQ&ixlib=rb-4.0.3&q=80",
+					"https://images.unsplash.com/photo-1670258880099-f1f0bd41e44a?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzOTM0NzV8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NzIyMDE5MTQ&ixlib=rb-4.0.3&q=80",
+					"https://images.unsplash.com/photo-1670258880099-f1f0bd41e44a?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzOTM0NzV8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NzIyMDE5MTQ&ixlib=rb-4.0.3&q=80",
+					"https://images.unsplash.com/photo-1670258880099-f1f0bd41e44a?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzOTM0NzV8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NzIyMDE5MTQ&ixlib=rb-4.0.3&q=80",
+					"https://images.unsplash.com/photo-1670258880099-f1f0bd41e44a?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzOTM0NzV8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NzIyMDE5MTQ&ixlib=rb-4.0.3&q=80",
+					"https://images.unsplash.com/photo-1670258880099-f1f0bd41e44a?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzOTM0NzV8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NzIyMDE5MTQ&ixlib=rb-4.0.3&q=80"
 				],
+				"GIT_LINK": "#",
+				"DEMO_LINK": "#",
 				"TECHNOLOGIES": [
-					"Laravel",
+					" ",
 					"Angular",
 					"SASS",
 					"Angular Material",
@@ -124,9 +120,9 @@
 			{
 				"TITLE": "Hands game",
 				"DESCRIPTION": "The rock-paper-scissors game extended. A personal project developed in angular in which you play randomly against the machine. It has the use of services, interfaces, and components.",
-				"IMGS": ["assets/images/hands-game.png"],
-				"GIT_LINK": "https://github.com/andresjosehr/hands-game",
-				"demoLink": "https://projects.andresjosehr.com/hands-game",
+				"IMGS": ["https://images.unsplash.com/photo-1671594493116-916663bda9bd?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzOTM0NzV8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NzIyMDI1NzE&ixlib=rb-4.0.3&q=80"],
+				"GIT_LINK": "#",
+				"DEMO_LINK": "#",
 				"TECHNOLOGIES": [
 					"Angular",
 					"CSS GRID",
@@ -137,62 +133,88 @@
 			{
 				"TITLE": "Countries viewer",
 				"DESCRIPTION": "An interface that consumes an API of countries with which you can view a list of countries, see details of each country, filter by name and region. It also has a dark mode to switch between dark and light themes.",
-				"IMGS": ["assets/images/countries-viewer.png"],
-				"GIT_LINK": "https://github.com/andresjosehr/countries-viewer",
-				"demoLink": "https://projects.andresjosehr.com/countries-viewer",
+				"IMGS": [
+					"https://images.unsplash.com/photo-1671398098105-5a49b16bfaab?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzOTM0NzV8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NzIyMDE5Mjg&ixlib=rb-4.0.3&q=80",
+					"https://images.unsplash.com/photo-1540270776932-e72e7c2d11cd?ixlib=rb-4.0.3&q=80&cs=tinysrgb&fm=jpg&crop=entropy",
+					"https://images.unsplash.com/photo-1671398098105-5a49b16bfaab?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzOTM0NzV8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NzIyMDE5Mjg&ixlib=rb-4.0.3&q=80",
+					"https://images.unsplash.com/photo-1540270776932-e72e7c2d11cd?ixlib=rb-4.0.3&q=80&cs=tinysrgb&fm=jpg&crop=entropy"
+				],
+				"GIT_LINK": "#",
+				"DEMO_LINK": "#",
 				"TECHNOLOGIES": ["Angular", "RxJS", "SASS", "API"]
 			}
 		]
 	},
-
-	"OtherProjects.Title": "Mas proyectos",
-	"OtherProjects.Projects": [
-		{
-			"Title": "Pokemon",
-			"DESCRIPTION": "Buscador de pokemons que utiliza la pokeapi. Se usó programación orientada a objetos para organizar la información de los pokemons junto con su respectiva imagen.",
-			"GIT_LINK": "https://github.com/andresjosehr/pokemon-angular",
-			"demoLink": "https://proyectos.andresjosehr.com/pokemon-list",
-			"Technologies": ["Angular", "RxJs", "API", "Bootstrap"]
-		},
-		{
-			"Title": "Coming soon page",
-			"DESCRIPTION": "Proyecto personal de una página dividida de dos columnas para ser usado como 'Coming soon page'. Programada para ser totalmente responsive design. Cuenta con un campo de formulario para suscribirse por correo electrónico.",
-			"GIT_LINK": "https://github.com/andresjosehr/coming-soon-page",
-			"demoLink": "https://proyectos.andresjosehr.com/coming-soon-page",
-			"Technologies": ["Angular", "SASS", "CSS GRID", "Reactive form"]
-		},
-		{
-			"Title": "Four card feature section",
-			"DESCRIPTION": "Una sola página que cuenta con un diseño minimalista que enumera 4 características en 4 cards. Se usan animaciones de entrada con angular animations.",
-			"GIT_LINK": "https://github.com/andresjosehr/fourd-card-feature-section",
-			"demoLink": "https://proyectos.andresjosehr.com/four-card-feature-section",
-			"Technologies": ["Angular", "SASS", "CSS GRID"]
-		},
-		{
-			"Title": "Social proof section",
-			"DESCRIPTION": "Proyecto personal de una página diseñada a partir de un diseño hecho en figma. Se utilizó angular para el desarrollo junto con SASS y CSS GRID.",
-			"GIT_LINK": "https://github.com/andresjosehr/social-proof-section",
-			"demoLink": "https://proyectos.andresjosehr.com/social-proof-section",
-			"Technologies": ["Angular", "CSS GRID", "GIT"]
-		},
-		{
-			"Title": "FAQ accordion card",
-			"DESCRIPTION": "Acordeón de preguntas frecuentes con lógica y animnaciones realizadas en Angular.",
-			"GIT_LINK": "https://github.com/andresjosehr/faq-accordion",
-			"demoLink": "https://proyectos.andresjosehr.com/faq-accordion",
-			"Technologies": ["Angular", "CSS GRID", "Angular animations"]
-		},
-		{
-			"Title": "Profile card",
-			"DESCRIPTION": "Simple diseño de una página que cuenta con una carta de perfil con información básica de una persona.",
-			"GIT_LINK": "https://github.com/andresjosehr/profile-card-component",
-			"demoLink": "https://proyectos.andresjosehr.com/profile-card-component",
-			"Technologies": ["Angular", "SASS", "GIT"]
-		}
-	],
-
-	"Contact.Pretitle": "Y... ¿Ahora?",
-	"Contact.Title": "¡Saludame!",
-	"Contact.Content": "Estaré encantado de recibir tu contacto si quieres conversar acerca de nuevas oportunidades. Escríbeme, y te responderé tan pronto como vea tu mensaje.",
-	"Contact.Btn": "Contactame"
+	"OTHER_PROJECT": {
+		"TITLE": "More projects",
+		"PROJECTS": [
+			{
+				"TITLE": "Pokemon",
+				"DESCRIPTION": "Search engine that uses the pokeapi. Object-oriented programming was used to organize the information of the pokemons along with their respective image.",
+				"IMGS": [
+					"https://images.unsplash.com/photo-1671225570325-ae58c0b430b8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzOTM0NzV8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NzIyMDA3OTY&ixlib=rb-4.0.3&q=80&w=400"
+				],
+				"GIT_LINK": "#",
+				"DEMO_LINK": "#",
+				"TECHNOLOGIES": ["Angular", "RxJs", "API", "Bootstrap"]
+			},
+			{
+				"TITLE": "Coming soon page",
+				"DESCRIPTION": "Personal project of a two-column split page to be used as a 'Coming soon page'. Scheduled to be a fully responsive design. It has a form field to subscribe by email.",
+				"IMGS": [
+					"https://images.unsplash.com/photo-1670296047577-36c2c1281a85?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzOTM0NzV8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NzIyMDA5NzA&ixlib=rb-4.0.3&q=80&w=400"
+				],
+				"GIT_LINK": "#",
+				"DEMO_LINK": "#",
+				"TECHNOLOGIES": ["Angular", "SASS", "CSS GRID", "Reactive form"]
+			},
+			{
+				"TITLE": "Four card feature section",
+				"DESCRIPTION": "A single page that has a minimal design, listing four features on four cards. Input animations are done with angular animations.",
+				"IMGS": [
+					"https://images.unsplash.com/photo-1671540675967-7342577470d0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzOTM0NzV8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NzIyMDA5OTc&ixlib=rb-4.0.3&q=80&w=400"
+				],
+				"GIT_LINK": "#",
+				"DEMO_LINK": "#",
+				"TECHNOLOGIES": ["Angular", "SASS", "CSS GRID"]
+			},
+			{
+				"TITLE": "Social proof section",
+				"DESCRIPTION": "Personal project of a page designed from a Figma layout. Angular was used for development together with SASS and CSS GRID.",
+				"IMGS": [
+					"https://images.unsplash.com/photo-1669977555607-821e3cf597ca?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzOTM0NzV8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NzIyMDE0Mjk&ixlib=rb-4.0.3&q=80&w=400"
+				],
+				"GIT_LINK": "",
+				"DEMO_LINK": "",
+				"TECHNOLOGIES": ["Angular", "CSS GRID", "GIT"]
+			},
+			{
+				"TITLE": "FAQ accordion card",
+				"DESCRIPTION": "FAQ accordion with logic and animations made in Angular.",
+				"IMGS": [
+					"https://images.unsplash.com/photo-1670008922901-2c57336ab59e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzOTM0NzV8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NzIyMDEwMjU&ixlib=rb-4.0.3&q=80&w=400"
+				],
+				"GIT_LINK": "",
+				"DEMO_LINK": "",
+				"TECHNOLOGIES": ["Angular", "CSS GRID", "Angular animations"]
+			},
+			{
+				"TITLE": "Profile card",
+				"DESCRIPTION": "Simple one-page design that features a profile letter with basic information about a person.",
+				"IMGS": [
+					"https://images.unsplash.com/photo-1670557934550-93665658943e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzOTM0NzV8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NzIyMDEwNTM&ixlib=rb-4.0.3&q=80&w=400"
+				],
+				"GIT_LINK": "",
+				"DEMO_LINK": "",
+				"TECHNOLOGIES": ["Angular", "SASS", "GIT"]
+			}
+		]
+	},
+	"CONTACT": {
+		"HEADER": "What’s Next",
+		"ACTION": "Get in touch!",
+		"TITLE": "Say Hello",
+		"CONTENT": "I will be happy to receive your contact if you want to talk about new opportunities. Write me, and I will reply as soon as I see your message. Simple one-page design that features a profile letter with basic information about a person.",
+		"SUB_CONTENT": "Whether to just say hello or to talk about designing all the things, feel free to reach out. You can find me on Twitter, LinkedIn or you can just give me a call at 0123-123-123 directly."
+	}
 }

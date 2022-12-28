@@ -10,11 +10,11 @@
             <div *ngFor='let PROJECT of "FEATURE_PROJECT.PROJECTS" | translate; let i = index'
                 class="d-flex project-container" data-aos="fade-up" data-aos-duration="1000">
                 <owl-carousel-o class='owl-carousel-o' [options]="customOptions" *ngIf="i%2 == 0">
-                    <ng-container *ngFor="let IMG of PROJECT.IMGS">
+                    <ng-container *ngFor="let IMG of PROJECT.IMGS; let _index = index">
                         <ng-template carouselSlide [id]="PROJECT.TITLE + i">
                             <div #imgContainer class='img-container'>
-                                <img class='img-feature-project rounded'
-                                    src="https://i.pinimg.com/564x/e6/7d/76/e67d76ce62bdbc63a756b182f6b7a025.jpg"
+                                <img loading="lazy" class='img-feature-project rounded'
+                                    src="{{_index %2 != 0 ? IMG : 'https://i.pinimg.com/564x/e6/7d/76/e67d76ce62bdbc63a756b182f6b7a025.jpg'}}"
                                     [alt]="PROJECT.TITLE">
                             </div>
                         </ng-template>
@@ -23,8 +23,8 @@
                 <div class="img-feature-project-container" data-aos="fade-up" data-aos-duration="1000" *ngIf="i%2 == 0">
                     <div class="img-feature-project-box">
                         <div class="img-container" style='width: auto;'>
-                            <img class='img-feature-project rounded'
-                                src="https://i.pinimg.com/564x/e6/7d/76/e67d76ce62bdbc63a756b182f6b7a025.jpg"
+                            <img loading="lazy" class='img-feature-project rounded'
+                                [src]="PROJECT.IMGS[0]"
                                 [alt]="PROJECT.IMGS[0]" width='600px'>
                         </div>
                     </div>
@@ -56,11 +56,11 @@
                     </div>
                 </div>
                 <owl-carousel-o class='owl-carousel-o' [options]="customOptions" *ngIf="i%2 != 0">
-                    <ng-container *ngFor="let img of PROJECT.IMGS">
+                    <ng-container *ngFor="let img of PROJECT.IMGS;let _index = index">
                         <ng-template carouselSlide [id]="PROJECT.TITLE+i">
                             <div class='img-container'>
-                                <img class='img-feature-project rounded'
-                                    src="https://i.pinimg.com/564x/e6/7d/76/e67d76ce62bdbc63a756b182f6b7a025.jpg"
+                                <img loading="lazy" class='img-feature-project rounded'
+                                    src="{{_index %2 == 0 ? img : 'https://i.pinimg.com/564x/e6/7d/76/e67d76ce62bdbc63a756b182f6b7a025.jpg'}}"
                                     [alt]="PROJECT.TITLE">
                             </div>
                         </ng-template>
@@ -69,8 +69,8 @@
                 <div class="img-feature-project-container" data-aos="fade-up" data-aos-duration="1000" *ngIf="i%2 != 0">
                     <div class="img-feature-project-box">
                         <div class="img-container" style='width: auto;'>
-                            <img class='img-feature-project rounded'
-                                src="https://i.pinimg.com/564x/e6/7d/76/e67d76ce62bdbc63a756b182f6b7a025.jpg"
+                            <img loading="lazy" class='img-feature-project rounded'
+                                [src]="PROJECT.IMGS[0]"
                                 [alt]="PROJECT.IMGS[0]" width='600px'>
                         </div>
                     </div>

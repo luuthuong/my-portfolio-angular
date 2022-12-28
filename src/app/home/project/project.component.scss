@@ -39,7 +39,7 @@
             }
 
             .project-desc-box {
-                box-shadow: 4px 4px 20px #a3a3a3a9, -8px -8px 50px #939292c0;
+                box-shadow: 4px 4px 20px #a3a3a345, -8px -8px 20px #93929224;
                 -webkit-transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
                 transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
                 position: relative;
@@ -101,7 +101,7 @@
                     }
                 }
                 i {
-                    font-size: 22px;
+                    font-size: 1em;
                     color: $text-icon;
                     transition: color .3s ease;
                 }
@@ -194,6 +194,9 @@
 
                 .project-box {
                     display: block;
+                    .project-links{
+                        justify-content: center;
+                    }
                 }
             }
 

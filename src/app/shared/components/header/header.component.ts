@@ -16,7 +16,7 @@ import { StorageService } from 'src/app/services/storage.service';
       transition(":enter",[
         query("*", [
           style({opacity: 0, transform: "translateY(-50%)"}),
-          stagger(50,[
+          stagger(100,[
             animate(
               "250ms cubic-bezier(0.35, 0, 0.25, 1)",
               style({opacity: 1, transform: "none"}))
@@ -67,7 +67,8 @@ export class HeaderComponent extends BaseComponentComponent implements OnInit {
 
   @HostListener('window:scroll', ['getScrollPosition($event)'])
     getScrollPosition(event: any) {
-        this.pageYPosition= window.pageYOffset
+      console.log(window.pageYOffset)
+        this.pageYPosition= window.pageYOffset;
     }
 
     changeLanguage(language: 'vi'|'en') {

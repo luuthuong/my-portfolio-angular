@@ -34,7 +34,6 @@ export class BannerComponent extends BaseComponentComponent implements OnInit {
   }
 
   onClick($event: any){
-    console.log(12)
   }
 
 }
