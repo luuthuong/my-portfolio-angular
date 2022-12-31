@@ -1,6 +1,9 @@
 import { animate, query, stagger, style, transition, trigger } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
-import { AnalyticsService } from 'src/app/services/analytics.service';
+import { takeUntil } from 'rxjs/operators';
+import { GlobalService } from 'src/app/services/global.service';
+import { IInfomation } from 'src/app/shared/models/information.model';
+import { BaseComponent } from './../base-component.component';
 
 @Component({
   selector: 'app-footer',
@@ -22,12 +25,24 @@ import { AnalyticsService } from 'src/app/services/analytics.service';
     ])
   ]
 })
-export class FooterComponent implements OnInit {
+export class FooterComponent extends BaseComponent implements OnInit {
+  information !: IInfomation;
   constructor(
-    public analyticsService: AnalyticsService
-  ) { }
+      private globalService: GlobalService
+  ) { 
+    super();
+    this.globalService.$getInformation
+    .pipe(takeUntil(this.ngUnSubcribe))
+    .subscribe(result =>{
+      this.information = result;
+    })
+  }
 
   ngOnInit(): void {
+  }
+
+  onClickLinkIcon(url: string){
+    window.open(url,'_blank');
   }
 
 }

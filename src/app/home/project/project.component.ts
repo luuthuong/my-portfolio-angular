@@ -1,13 +1,13 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
-import { BaseComponentComponent } from 'src/app/shared/components/base-component.component';
+import { BaseComponent } from 'src/app/shared/components/base-component.component';
 
 @Component({
   selector: 'app-project',
   templateUrl: './project.component.html',
   styleUrls: ['./project.component.scss']
 })
-export class ProjectComponent extends BaseComponentComponent implements OnInit {
+export class ProjectComponent extends BaseComponent implements OnInit {
   customOptions: OwlOptions = {
     loop: true,
     mouseDrag: true,

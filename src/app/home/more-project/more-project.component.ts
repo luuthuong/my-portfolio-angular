@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
-import { BaseComponentComponent } from 'src/app/shared/components/base-component.component';
+import { BaseComponent } from 'src/app/shared/components/base-component.component';
 
 @Component({
   selector: 'app-more-project',
   templateUrl: './more-project.component.html',
   styleUrls: ['./more-project.component.scss']
 })
-export class MoreProjectComponent extends BaseComponentComponent implements OnInit {
+export class MoreProjectComponent extends BaseComponent implements OnInit {
 
   constructor(
     private router: Router,

@@ -1,9 +1,11 @@
+import { IInfomation } from './../../shared/models/information.model';
 import { takeUntil } from 'rxjs/operators';
 import { animate, query, stagger, style, transition, trigger } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/compat/firestore';
 import { AnalyticsService } from 'src/app/services/analytics.service';
-import { BaseComponentComponent } from 'src/app/shared/components/base-component.component';
+import { BaseComponent } from 'src/app/shared/components/base-component.component';
+import { GlobalService } from 'src/app/services/global.service';
 export interface Item { name: string; }
 @Component({
   selector: 'app-banner',
@@ -25,20 +27,21 @@ export interface Item { name: string; }
     ])
   ]
 })
-export class BannerComponent extends BaseComponentComponent implements OnInit {
-  private itemDocs !: AngularFirestoreDocument<Item>;
+export class BannerComponent extends BaseComponent implements OnInit {
+  information !: IInfomation
   constructor(
-    private fireStore : AngularFirestore
+    private globalService: GlobalService
   ) {
     super();
-    this.itemDocs = this.fireStore.doc<Item>('Intro/1');
-    this.itemDocs.valueChanges()
-    .pipe(takeUntil(this.ngUnSubcribe))
-    .subscribe(response =>{
-    })
   }
 
   ngOnInit(): void {
+    this.globalService.$getInformation
+    .pipe(takeUntil(this.ngUnSubcribe))
+    .subscribe(result =>{
+      this.information = result;
+      console.log(this.information)
+    });
   }
 
   onClick($event: any){

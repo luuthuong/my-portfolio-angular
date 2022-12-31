@@ -10,8 +10,9 @@ export class AnalyticsService {
     private $gaService: GoogleAnalyticsService
   ) { }
 
-  sendAnalyticEvent(action: string, category: string, label: string){
+  sendAnalyticEvent(action: string, category: string, label: string, callback: void){
     this.$gaService.event(action, category, label);
+    callback;
   }
 
   sendAnalyticPageView(path: string, title: string){

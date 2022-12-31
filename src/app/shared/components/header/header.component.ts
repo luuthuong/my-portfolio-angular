@@ -1,3 +1,4 @@
+import { FirebaseService } from './../../../services/firebase.service';
 import { animate, query, stagger, style, transition, trigger } from '@angular/animations';
 import { Component, HostListener, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
@@ -5,8 +6,9 @@ import { Router } from '@angular/router';
 import { AnalyticsService } from 'src/app/services/analytics.service';
 import { LanguageService } from 'src/app/services/language.service';
 import {takeUntil} from 'rxjs/operators';
-import { BaseComponentComponent } from '../base-component.component';
+import { BaseComponent } from '../base-component.component';
 import { StorageService } from 'src/app/services/storage.service';
+import { GlobalService } from 'src/app/services/global.service';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -26,7 +28,7 @@ import { StorageService } from 'src/app/services/storage.service';
     ])
   ]
 })
-export class HeaderComponent extends BaseComponentComponent implements OnInit {
+export class HeaderComponent extends BaseComponent implements OnInit {
   responsiveMenuVisible: Boolean = false;
   pageYPosition!: number;
   languageFormControl: FormControl= new FormControl(this.languageService.lang);
@@ -34,7 +36,9 @@ export class HeaderComponent extends BaseComponentComponent implements OnInit {
 
   constructor(
     private router: Router,
-    public languageService: LanguageService
+    public languageService: LanguageService,
+    private firebaseService: FirebaseService,
+    private globalService: GlobalService
   ) {
     super();
   }
@@ -44,6 +48,7 @@ export class HeaderComponent extends BaseComponentComponent implements OnInit {
 
   scroll(el: any) {
     const element = document.getElementById(el);
+    console.log(element)
     if(element) {
       element.scrollIntoView({behavior: 'smooth',block: 'start'});
     } else{
@@ -62,19 +67,17 @@ export class HeaderComponent extends BaseComponentComponent implements OnInit {
     //   // Open a new window with the CV
     //   window.open(url + "/../assets/cv/" + this.cvName, "_blank");
     // })
-
   }
 
   @HostListener('window:scroll', ['getScrollPosition($event)'])
     getScrollPosition(event: any) {
-      console.log(window.pageYOffset)
         this.pageYPosition= window.pageYOffset;
     }
 
-    changeLanguage(language: 'vi'|'en') {
+    async changeLanguage(language: 'vi'|'en') {
       this.languageFormControl.setValue(language);
-      this.languageService.changeLanguage(language)
-      StorageService.setItem('lang', language)
+      this.languageService.changeLanguage(language);
+      StorageService.setItem('lang', language);
+      this.globalService.updateInformation();
     }
-
 }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SlideAnimation } from 'src/app/shared/animations/slide.animation';
-import { BaseComponentComponent } from 'src/app/shared/components/base-component.component';
+import { BaseComponent } from 'src/app/shared/components/base-component.component';
 
 @Component({
   selector: 'app-jobs',
@@ -10,7 +10,7 @@ import { BaseComponentComponent } from 'src/app/shared/components/base-component
     SlideAnimation
   ]
 })
-export class JobsComponent extends BaseComponentComponent implements OnInit {
+export class JobsComponent extends BaseComponent implements OnInit {
   active = 0
   constructor() { 
     super();

@@ -4,7 +4,7 @@ import { Subject } from 'rxjs';
 import { AnalyticsService } from 'src/app/services/analytics.service';
 
 @Injectable()
-export class BaseComponentComponent implements OnDestroy {
+export class BaseComponent implements OnDestroy {
   ngUnSubcribe = new Subject<void>();
   analyticsService: AnalyticsService;
   constructor() { 

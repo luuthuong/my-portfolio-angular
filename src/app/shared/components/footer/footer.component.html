@@ -1,22 +1,22 @@
-<footer>
+<footer *ngIf="information">
     <div [@animateFooter]>
         <ul class="footer-left-bar d-none d-md-block">
-            <li (click)='analyticsService.sendAnalyticEvent("click_github", "footer", "github")' matRipple>
+            <li (click)='analyticsService.sendAnalyticEvent("click_github", "footer", "github",onClickLinkIcon(information.github))' matRipple>
                 <i class="fab fa-github"></i>
             </li>
-            <li (click)='analyticsService.sendAnalyticEvent("click_linkedin", "footer", "linkedin")' matRipple>
+            <li (click)='analyticsService.sendAnalyticEvent("click_linkedin", "footer", "linkedin",onClickLinkIcon(information.linkedln))' matRipple>
                 <i class="fab fa-linkedin-in"></i>
             </li>
-            <li (click)='analyticsService.sendAnalyticEvent("click_facebook", "footer", "facebbok")' matRipple>
+            <li (click)='analyticsService.sendAnalyticEvent("click_facebook", "footer", "facebbok",onClickLinkIcon(information.facebook))' matRipple>
                 <i class="fab fa-facebook"></i>
             </li>
-            <li (click)='analyticsService.sendAnalyticEvent("click_twiter", "footer", "twiter")' matRipple>
+            <li (click)='analyticsService.sendAnalyticEvent("click_twiter", "footer", "twiter",onClickLinkIcon(information.twiter))' matRipple>
                 <i class="fab fa-twitter"></i>
             </li>
         </ul>
         <div class="footer-right-bar d-none d-md-block">
             <a (click)='analyticsService.sendAnalyticEvent("click_send_mail", "footer", "email")'
-                href="mailto:nguyen.thuong.work@gmail.com" target='_blank'>nguyen.thuong.work@gmail.com </a>
+                href="mailto:{{information.email}}" target='_blank'>{{information.email}}</a>
         </div>
     </div>
 
