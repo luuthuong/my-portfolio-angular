@@ -7,5 +7,5 @@ export interface IContent{
 }
 export interface IExperience extends IBaseModel{
     content: IContent;
-    type: string;
+    name: string;
 }

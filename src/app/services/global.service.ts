@@ -9,16 +9,26 @@ import { Injectable } from '@angular/core';
 })
 export class GlobalService {
   $getInformation = new Subject<IInfomation>();
-  $getExperience = new Subject<IExperience>();
+  $getExperience = new Subject<IExperience[]>();
+  $getProject = new Subject
+
   constructor(
     private firebaseService: FirebaseService
   ) { }
   async updateInformation(){
     const informationResponse = await this.firebaseService.getInformation();
-    this.$getInformation.next(informationResponse.docs[0].data());
+    this.$getInformation.next({
+      ...informationResponse.docs[0].data(),
+      documentId : informationResponse.docs[0].id
+    });
   }
 
-  updateExperience(data: IExperience){
-    this.$getExperience.next(data);
+  async updateExperience(){
+    const experienceResponse = await this.firebaseService.getExperience();
+    const experiences = experienceResponse.docs.map(item => ({
+      ...item.data(),
+      documentId: item.id
+    }));
+    this.$getExperience.next(experiences)
   }
 }

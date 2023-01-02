@@ -17,7 +17,6 @@ export class LoadingInterceptor implements HttpInterceptor {
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
     const spinner: NgxSpinnerService = AppInjector.getService(NgxSpinnerService)
-    console.log(request)
     spinner.show();
     return next.handle(request).pipe(finalize(()=>{
       spinner.hide();

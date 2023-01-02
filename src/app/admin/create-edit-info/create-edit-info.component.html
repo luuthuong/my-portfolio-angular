@@ -1,0 +1,181 @@
+<div class="edit-information container">
+    <mat-tab-group>
+        <mat-tab label="EN">
+            <form class="container-fluid" [formGroup]="formInfomation.en">
+                <div class="row">
+                    <div class="col-6">
+                        <mat-form-field class="w-100">
+                            <mat-label>Name</mat-label>
+                            <input formControlName="name" matInput placeholder="Name" />
+                        </mat-form-field>
+                    </div>
+                    <div class="col-6">
+                        <mat-form-field class="w-100">
+                            <mat-label>Email</mat-label>
+                            <input formControlName="email" matInput placeholder="Email" />
+                        </mat-form-field>
+                    </div>
+                    <div class="col-6">
+                        <mat-form-field class="w-100">
+                            <mat-label>Profession</mat-label>
+                            <input formControlName="profession" matInput placeholder="Profession" />
+                        </mat-form-field>
+                    </div>
+                    <div class="col-6">
+                        <mat-form-field class="w-100">
+                            <mat-label>Facebook</mat-label>
+                            <input formControlName="facebook" matInput placeholder="Facebook" />
+                        </mat-form-field>
+                    </div>
+                    <div class="col-6">
+                        <mat-form-field class="w-100">
+                            <mat-label>Linkedln</mat-label>
+                            <input formControlName="linkedln" matInput placeholder="Linkedln" />
+                        </mat-form-field>
+                    </div>
+                    <div class="col-6">
+                        <mat-form-field class="w-100">
+                            <mat-label>Github</mat-label>
+                            <input formControlName="github" matInput placeholder="Github" />
+                        </mat-form-field>
+                    </div>
+                    <div class="col-6">
+                        <mat-form-field class="w-100">
+                            <mat-label>Twiter</mat-label>
+                            <input matInput placeholder="Twiter" formControlName="twiter" />
+                        </mat-form-field>
+                    </div>
+                    <div class="col-6">
+                        <mat-form-field class="w-100">
+                            <mat-label>Skill</mat-label>
+                            <input #skillEn type="text" matInput placeholder="Skill">
+                            <button (click)="addSkill('en', skillEn.value); skillEn.value = ''" mat-icon-button matSuffix>
+                                <i class="fa fa-solid fa-plus"></i>
+                            </button>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-12">
+                        <div class="row">
+                            <mat-card class="m-1"
+                                *ngFor="let item of formInfomation.en.controls['skill']?.value; let _index = index">
+                                <mat-card-content>{{item}}</mat-card-content>
+                                <mat-card-actions>
+                                    <button (click)="deleteSkill('en',_index)" color="warn" mat-button>Delete</button>
+                                </mat-card-actions>
+                            </mat-card>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <mat-form-field class="w-100">
+                            <mat-label>Description</mat-label>
+                            <textarea [rows]="5" formControlName="description" matInput
+                                placeholder="Description"></textarea>
+                        </mat-form-field>
+                        <mat-form-field class="w-100">
+                            <mat-label>Banner Content</mat-label>
+                            <textarea [rows]="5" formControlName="bannerContent" matInput
+                                placeholder="Banner Content"></textarea>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <button (click)="updateInfomation('en')" mat-raised-button color="primary">Update</button>
+                    </div>
+                </div>
+            </form>
+        </mat-tab>
+        <mat-tab label="VI">
+            <form class="container-fluid" [formGroup]="formInfomation.vi">
+                <div class="row">
+                    <div class="col-6">
+                        <mat-form-field class="w-100">
+                            <mat-label>Name</mat-label>
+                            <input formControlName="name" matInput placeholder="Name" />
+                        </mat-form-field>
+                    </div>
+                    <div class="col-6">
+                        <mat-form-field class="w-100">
+                            <mat-label>Email</mat-label>
+                            <input formControlName="email" matInput placeholder="Email" />
+                        </mat-form-field>
+                    </div>
+                    <div class="col-6">
+                        <mat-form-field class="w-100">
+                            <mat-label>Profession</mat-label>
+                            <input formControlName="profession" matInput placeholder="Profession" />
+                        </mat-form-field>
+                    </div>
+                    <div class="col-6">
+                        <mat-form-field class="w-100">
+                            <mat-label>Facebook</mat-label>
+                            <input formControlName="facebook" matInput placeholder="Facebook" />
+                        </mat-form-field>
+                    </div>
+                    <div class="col-6">
+                        <mat-form-field class="w-100">
+                            <mat-label>Linkedln</mat-label>
+                            <input formControlName="linkedln" matInput placeholder="Linkedln" />
+                        </mat-form-field>
+                    </div>
+                    <div class="col-6">
+                        <mat-form-field class="w-100">
+                            <mat-label>Github</mat-label>
+                            <input formControlName="github" matInput placeholder="Github" />
+                        </mat-form-field>
+                    </div>
+                    <div class="col-6">
+                        <mat-form-field class="w-100">
+                            <mat-label>Twiter</mat-label>
+                            <input matInput placeholder="Twiter" formControlName="twiter"/>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-6">
+                        <mat-form-field class="w-100">
+                            <mat-label>Skill</mat-label>
+                            <input #skillEn type="text" matInput placeholder="Skill">
+                            <button mat-icon-button matSuffix>
+                                <i class="fa fa-solid fa-plus"></i>
+                            </button>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-12">
+                        <div class="row">
+                            <mat-card class="m-1"
+                                *ngFor="let item of formInfomation.vi.controls['skill']?.value; let _index = index">
+                                <mat-card-content>{{item}}</mat-card-content>
+                                <mat-card-actions>
+                                    <button (click)="deleteSkill('vi', _index)" color="warn" mat-button>Delete</button>
+                                </mat-card-actions>
+                            </mat-card>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <mat-form-field class="w-100">
+                            <mat-label>Description</mat-label>
+                            <textarea [rows]="5" formControlName="description" matInput
+                                placeholder="Description"></textarea>
+                        </mat-form-field>
+                        <mat-form-field class="w-100">
+                            <mat-label>Banner Content</mat-label>
+                            <textarea [rows]="5" formControlName="bannerContent" matInput
+                                placeholder="Banner Content"></textarea>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <button (click)="updateInfomation('vi')" mat-raised-button color="primary">Cập nhật</button>
+                    </div>
+                </div>
+            </form>
+        </mat-tab>
+    </mat-tab-group>    
+    <div class="row">
+        <div class="col">
+            <button class="float-right" (click)="goback()"mat-raised-button color="accent">
+                GO BACK 
+            </button>
+        </div>
+    </div>
+</div>

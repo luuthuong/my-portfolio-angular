@@ -1,0 +1,270 @@
+<div class="create-edit-project">
+    <section class="w-100 d-flex justify-content-center align-items-center">
+        <mat-form-field class="mx-auto" appearance="fill">
+            <mat-label>Select an option</mat-label>
+            <mat-select [(value)]="selected">
+                <mat-option>None</mat-option>
+                <mat-option [value]="0">Experience</mat-option>
+                <mat-option [value]="1">Project</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </section>
+    <section *ngIf="selected === 1">
+        <div class="row">
+            <mat-form-field class="mx-auto" appearance="fill">
+                <mat-label>Type</mat-label>
+                <mat-select [(value)]="typeProject">
+                    <mat-option>None</mat-option>
+                    <mat-option [value]="0">My Project</mat-option>
+                    <mat-option [value]="1">More Project</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <mat-tab-group (selectedIndexChange)="selectedTabIndexProjectChange($event)">
+            <mat-tab label="EN">
+                <form class="container-fluid" [formGroup]="formProject.en">
+                    <mat-form-field class="w-100 col-6">
+                        <mat-label>Name</mat-label>
+                        <input type="text" matInput placeholder="Name" formControlName="name">
+                    </mat-form-field>
+                    <mat-form-field class="col-6">
+                        <mat-label>Content</mat-label>
+                        <textarea type="text" matInput placeholder="Content" formControlName="content"></textarea>
+                    </mat-form-field>
+                    <mat-form-field class="col-6">
+                        <mat-label>Demo Link</mat-label>
+                        <input type="text" matInput placeholder="Demo Link" formControlName="demoLink">
+                    </mat-form-field>
+                    <mat-form-field class="col-6">
+                        <mat-label>GIT Link</mat-label>
+                        <input type="text" matInput placeholder="GIT Link" formControlName="gitLink">
+                    </mat-form-field>
+                    <mat-form-field class="col-6">
+                        <mat-label>Technology</mat-label>
+                        <input #techEn type="text" matInput placeholder="GIT Link">
+                        <button (click)="addTechProject('en',techEn.value );techEn.value = ''" mat-icon-button
+                            matSuffix>
+                            <i class="fa fa-solid fa-plus"></i>
+                        </button>
+                    </mat-form-field>
+                    <br>
+                    <div class="row">
+                        <mat-card class="m-1"
+                            *ngFor="let item of formProject.en.controls['techs']?.value; let _index = index">
+                            <mat-card-content>{{item}}</mat-card-content>
+                            <mat-card-actions>
+                                <button (click)="removeTechProject('en',_index)" color="warn" mat-button>Delete</button>
+                            </mat-card-actions>
+                        </mat-card>
+                    </div>
+                    <div class="row">
+                        <button (click)="updateProject('en')" class="m-1" mat-raised-button>
+                            Update
+                        </button>
+                    </div>
+                </form>
+            </mat-tab>
+            <mat-tab label="VI">
+                <form class="container-fluid" [formGroup]="formProject.vi">
+                    <mat-form-field class="w-100 col-6">
+                        <mat-label>Tên project</mat-label>
+                        <input type="text" matInput placeholder="Tên project" formControlName="name">
+                    </mat-form-field>
+                    <mat-form-field class="col-6">
+                        <mat-label>Nội dung</mat-label>
+                        <textarea type="text" matInput placeholder="Nội dung" formControlName="content"></textarea>
+                    </mat-form-field>
+                    <mat-form-field class="col-6">
+                        <mat-label>Demo Link</mat-label>
+                        <input type="text" matInput placeholder="Demo Link" formControlName="demoLink">
+                    </mat-form-field>
+                    <mat-form-field class="col-6">
+                        <mat-label>GIT Link</mat-label>
+                        <input type="text" matInput placeholder="GIT Link" formControlName="gitLink">
+                    </mat-form-field>
+                    <mat-form-field class="col-6">
+                        <mat-label>Công nghệ sử dụng</mat-label>
+                        <input #techVI type="text" matInput placeholder="Công nghệ sử dụng">
+                        <button (click)="addTechProject('vi',techVI.value );techVI.value = ''" mat-icon-button
+                            matSuffix>
+                            <i class="fa fa-solid fa-plus"></i>
+                        </button>
+                    </mat-form-field>
+                    <br>
+                    <div class="row">
+                        <mat-card class="m-1"
+                            *ngFor="let item of formProject.vi.controls['techs']?.value; let _index = index">
+                            <mat-card-content>{{item}}</mat-card-content>
+                            <mat-card-actions>
+                                <button (click)="removeTechProject('vi',_index)" color="warn" mat-button>Delete</button>
+                            </mat-card-actions>
+                        </mat-card>
+                    </div>
+                    <div class="row">
+                        <button (click)="updateProject('vi')" class="m-1" mat-raised-button>
+                            Cập nhật
+                        </button>
+                    </div>
+                </form>
+            </mat-tab>
+            <mat-tab label="Preview">
+                <section class="container-fluid">
+                    <div class="row">
+                        <div class="col-3 my-2">
+                            <mat-button-toggle-group (change)="onChangeSelectLangPreviewProject($event)" [value]="'en'" #optionPreviewProject="matButtonToggleGroup">
+                                <mat-button-toggle value="en">EN</mat-button-toggle>
+                                <mat-button-toggle value="vi">VI</mat-button-toggle>
+                            </mat-button-toggle-group>
+                        </div>
+                    </div>
+                    <mat-divider class="my-2"></mat-divider>
+                    <div class="row row-cols-5 gy-2">
+                        <div class="col" *ngFor="let item of projectPreviews">
+                            <app-card-item (onDeleteEvent)="onDeleteDocument('Project',item.documentId)" [data]="mapProjectToCardItem(item)"></app-card-item>
+                        </div>
+                    </div>
+                </section>
+            </mat-tab>
+        </mat-tab-group>
+        <div class="row">
+            <div class="col">
+                <button class="float-right" (click)="goback()" mat-raised-button color="accent">
+                    GO BACK
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience -->
+    <section *ngIf="selected === 0">
+        <mat-tab-group  (selectedIndexChange)="selectedTabIndexExperienceChange($event)">
+            <mat-tab label="EN">
+                <form class="container-fluid" [formGroup]="formExperience.en">
+                    <div class="row">
+                        <mat-form-field class="col-6">
+                            <mat-label>Name</mat-label>
+                            <input formControlName="name" matInput placeholder="Name">
+                        </mat-form-field>
+                    </div>
+                    <h4>Content</h4>
+                    <form formGroupName="content">
+                        <div class="row">
+                            <mat-form-field class="col-6">
+                                <mat-label>Title</mat-label>
+                                <input formControlName="title" matInput placeholder="Title">
+                            </mat-form-field>
+                        </div>
+                        <div class="row">
+                            <mat-form-field class="col-6">
+                                <mat-label>Time</mat-label>
+                                <input formControlName="time" matInput>
+                            </mat-form-field>
+                        </div>
+                        <div class="row">
+                            <mat-form-field class="col-6">
+                                <mat-label>Leave a comment</mat-label>
+                                <textarea #descEn matInput placeholder="Description"></textarea>
+                            </mat-form-field>
+                            <button (click)="addDescription('en', descEn.value); descEn.value = ''" matSuffix
+                                mat-icon-button>
+                                <i class="fa fa-solid fa-plus"></i>
+                            </button>
+                        </div>
+                        <div class="row">
+                            <mat-card class="m-1"
+                                *ngFor="let item of formExperience.en.controls['content'].get('description')?.value; let _index = index">
+                                <mat-card-content>{{item}}</mat-card-content>
+                                <mat-card-actions>
+                                    <button (click)="onCloseItem('en',_index)" color="warn" mat-button>Delete</button>
+                                </mat-card-actions>
+                            </mat-card>
+                        </div>
+                    </form>
+                    <div class="row">
+                        <div class="col-6">
+                            <button class="mb-1 mx-auto" (click)="onUpdateExperience('en')"
+                                mat-raised-button>Update</button>
+                        </div>
+                    </div>
+                </form>
+            </mat-tab>
+            <mat-tab label="VI">
+                <form class="container-fluid" [formGroup]="formExperience.vi">
+                    <div class="row">
+                        <mat-form-field class="col-6">
+                            <mat-label>Tên dự án</mat-label>
+                            <input formControlName="name" matInput placeholder="Tên dự án">
+                        </mat-form-field>
+                    </div>
+                    <h4>Nội dung chính</h4>
+                    <form formGroupName="content">
+                        <div class="row">
+                            <mat-form-field class="col-6">
+                                <mat-label>Tiêu đề</mat-label>
+                                <input formControlName="title" matInput placeholder="Tiêu đề">
+                            </mat-form-field>
+                        </div>
+                        <div class="row">
+                            <mat-form-field class="col-6">
+                                <mat-label>Thời gian làm việc</mat-label>
+                                <input formControlName="time" matInput>
+                            </mat-form-field>
+                        </div>
+                        <div class="row">
+                            <mat-form-field class="col-6">
+                                <mat-label>Mô tả</mat-label>
+                                <textarea #descVi matInput placeholder="Mô tả"></textarea>
+                            </mat-form-field>
+                            <button (click)="addDescription('vi', descVi.value); descVi.value = ''" matSuffix
+                                mat-icon-button>
+                                <i class="fa fa-solid fa-plus"></i>
+                            </button>
+                        </div>
+                        <div class="row">
+                            <mat-card class="m-1"
+                                *ngFor="let item of formExperience.vi.controls['content'].get('description')?.value; let _index = index">
+                                <mat-card-content>{{item}}</mat-card-content>
+                                <mat-card-actions>
+                                    <button (click)="onCloseItem('vi',_index)" color="warn" mat-button>Delete</button>
+                                </mat-card-actions>
+                            </mat-card>
+                        </div>
+                    </form>
+                    <div class="row">
+                        <div class="col-6">
+                            <button class="mb-1 mx-auto" (click)="onUpdateExperience('vi')" mat-raised-button>Cập
+                                nhật</button>
+                        </div>
+                    </div>
+                </form>
+            </mat-tab>
+
+            <mat-tab label="Preview">
+                <section class="container-fluid">
+                    <div class="row">
+                        <div class="col-3 my-2">
+                            <mat-button-toggle-group (change)="onChangeSelectLangPreviewExperience($event)" [value]="'en'" #optionPreviewExperience="matButtonToggleGroup">
+                                <mat-button-toggle value="en">EN</mat-button-toggle>
+                                <mat-button-toggle value="vi">VI</mat-button-toggle>
+                            </mat-button-toggle-group>
+                        </div>
+                    </div>
+                    <mat-divider class="my-2"></mat-divider>
+                    <div class="row row-cols-5 gy-2">
+                        <div class="col" *ngFor="let item of experiencesPreview">
+                            <app-card-item [type]="1" (onDeleteEvent)="onDeleteDocument('Experience',item.documentId)" [data]="mapExperienceToCardItem(item)"></app-card-item>
+                        </div>
+                    </div>
+                </section>
+            </mat-tab>
+
+        </mat-tab-group>
+        <div class="row">
+            <div class="col">
+                <button class="float-right" (click)="goback()" mat-raised-button color="accent">
+                    GO BACK
+                </button>
+            </div>
+        </div>
+    </section>
+</div>
