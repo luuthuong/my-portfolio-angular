@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AdminComponent } from './admin.component';
 import { CreateEditProjectComponent } from './create-edit-project/create-edit-project.component';
 import { CreateEditInfoComponent } from './create-edit-info/create-edit-info.component';
+import { FooterComponent } from './footer/footer.component';
 
 const routes: Routes = [
     {
@@ -16,6 +17,10 @@ const routes: Routes = [
     {
         path: 'info',
         component: CreateEditInfoComponent
+    },
+    {
+        path: 'footer',
+        component: FooterComponent
     }
 ];
 

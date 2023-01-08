@@ -8,13 +8,15 @@ import { CreateEditInfoComponent } from './create-edit-info/create-edit-info.com
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbAlertModule } from '@ng-bootstrap/ng-bootstrap';
 import { GridViewComponent } from './grid-view/grid-view.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
     AdminComponent,
     CreateEditProjectComponent,
     CreateEditInfoComponent,
-    GridViewComponent
+    GridViewComponent,
+    FooterComponent
   ],
   imports: [
     CommonModule,

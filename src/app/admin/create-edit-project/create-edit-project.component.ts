@@ -12,6 +12,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { IConfirmDialog } from 'src/app/shared/models/confirm-dialog.model';
 import { ComfirmDialogComponent } from 'src/app/shared/components/comfirm-dialog/comfirm-dialog.component';
 import { ICardItem } from 'src/app/shared/models/card-item.model';
+import { MatTabGroup } from '@angular/material/tabs';
 @Component({
   selector: 'app-create-edit-project',
   templateUrl: './create-edit-project.component.html',
@@ -38,6 +39,8 @@ export class CreateEditProjectComponent extends BaseComponent implements OnInit 
     read: MatButtonToggleGroup,
   }) previewExperienceOption !: MatButtonToggleGroup;
 
+  @ViewChild(MatTabGroup) matTabGroup !: MatTabGroup
+
   projectPreviews: IProject[] = [];
   experiencesPreview: IExperience[] = [];
   constructor(
@@ -61,7 +64,8 @@ export class CreateEditProjectComponent extends BaseComponent implements OnInit 
           time: new FormControl(''),
           title: new FormControl('')
         }),
-        name: new FormControl('')
+        name: new FormControl(''),
+        id: new FormControl({ value: null, disabled: true })
       }),
       vi: new FormGroup({
         content: new FormGroup({
@@ -69,9 +73,26 @@ export class CreateEditProjectComponent extends BaseComponent implements OnInit 
           time: new FormControl(''),
           title: new FormControl('')
         }),
-        name: new FormControl('')
+        name: new FormControl(''),
+        id: new FormControl({ value: null, disabled: true })
       })
     };
+    const langs: ('vi'| 'en')[] = ['en', 'vi'];
+    langs.forEach(lang =>{
+      this.formExperience[lang].controls['id'].valueChanges
+        .pipe(takeUntil(this.ngUnSubcribe))
+        .subscribe(async res =>{
+          if(res){
+            const result = await this.firebaseService.getExperienceById(res) as any;
+            const keys = Object.keys(this.formExperience[lang].getRawValue());
+            keys.forEach(key => {
+              if(key !== 'id'){
+                this.formExperience[lang].controls[key].setValue(result[key])
+              }
+            })
+          }
+        })
+    });
   }
 
   private _buildFormProject() {
@@ -82,15 +103,42 @@ export class CreateEditProjectComponent extends BaseComponent implements OnInit 
         demoLink: new FormControl(''),
         gitLink: new FormControl(''),
         techs: new FormControl([]),
+        id: new FormControl({
+            value: null,
+            disabled: true
+          })
       }),
       vi: new FormGroup({
         name: new FormControl(),
         content: new FormControl(''),
         demoLink: new FormControl(''),
         gitLink: new FormControl(''),
-        techs: new FormControl([])
+        techs: new FormControl([]),
+        id: new FormControl({
+          value: null,
+          disabled: true
+        })
       })
     }
+    const langs: ('vi'| 'en')[] = ['en', 'vi'];
+    langs.forEach(lang => {
+      this.formProject[lang].controls['id'].valueChanges
+        .pipe(takeUntil(this.ngUnSubcribe))
+        .subscribe(async (res: string) => {
+          if (res) {
+            const result = await this.firebaseService.getProjectById(res) as any
+            if (result) {
+              const formGroup = this.formProject[lang] as FormGroup;
+              const keys = Object.keys(formGroup.getRawValue());
+              keys.forEach(item =>{
+                if(item != 'id'){
+                  formGroup.controls[item].setValue(result[item]);
+                }
+              })
+            }
+          }
+        });
+    })
   }
 
   addDescription(lang: "vi" | "en", input: string) {
@@ -107,9 +155,18 @@ export class CreateEditProjectComponent extends BaseComponent implements OnInit 
   }
 
   onUpdateExperience(lang: 'vi' | 'en') {
-    const rawValue = this.formExperience[lang].getRawValue() as IExperience;
+    const rawValue = this.formExperience[lang].getRawValue();
     rawValue.lang = lang;
-    this.firebaseService.updateCollection('Experience', rawValue);
+    const request: IExperience = {
+      content: rawValue.content,
+      lang: rawValue.lang,
+      name: rawValue.name
+    };
+    if (rawValue.id) {
+      this.firebaseService.updateDoc<IExperience>('Experience', rawValue.id, request);
+      return;
+    }
+    this.firebaseService.updateCollection('Experience', request);
   }
 
   addTechProject(lang: 'vi' | 'en', value: string) {
@@ -125,10 +182,21 @@ export class CreateEditProjectComponent extends BaseComponent implements OnInit 
   }
 
   updateProject(lang: 'vi' | 'en') {
-    const formValue = this.formProject[lang].getRawValue() as IProject;
-    formValue.lang = lang;
-    formValue.type = this.typeProject;
-    this.firebaseService.updateCollection('Project', formValue);
+    const formValue = this.formProject[lang].getRawValue();
+    const request: IProject ={
+      content: formValue.content,
+      demoLink: formValue.demoLink,
+      gitLink: formValue.gitLink,
+      lang: lang,
+      name: formValue.name,
+      techs: formValue.techs,
+      type: this.typeProject
+    }
+    if(formValue.id){
+      this.firebaseService.updateDoc<IProject>('Project',formValue.id, request);
+      return;
+    }
+    this.firebaseService.updateCollection('Project', request);
   }
 
   async selectedTabIndexProjectChange(index: number) {
@@ -213,8 +281,21 @@ export class CreateEditProjectComponent extends BaseComponent implements OnInit 
     await this._getExperienceList(this.previewExperienceOption.value);
   }
 
+  onEditExperience(item: IExperience) {
+    if (!this.matTabGroup || !item.documentId)
+      return;
+    this.formExperience[item.lang].controls['id'].patchValue(item.documentId);
+    this.matTabGroup.selectedIndex = item.lang === 'en' ? 0 : 1;
+  }
+
+  onEditProject(item :IProject){
+    if (!this.matTabGroup || !item.documentId)
+      return;
+      this.formProject[item.lang].controls['id'].patchValue(item.documentId);
+      this.matTabGroup.selectedIndex = item.lang === 'en' ? 0 : 1;
+  }
+
   goback() {
     this.location.back();
   }
-
 }

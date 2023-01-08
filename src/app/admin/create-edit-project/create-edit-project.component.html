@@ -20,9 +20,16 @@
                 </mat-select>
             </mat-form-field>
         </div>
-        <mat-tab-group (selectedIndexChange)="selectedTabIndexProjectChange($event)">
+        <mat-tab-group #tabGroup (selectedIndexChange)="selectedTabIndexProjectChange($event)">
             <mat-tab label="EN">
                 <form class="container-fluid" [formGroup]="formProject.en">
+                    <mat-form-field class="w-100 col-6">
+                        <mat-label>ID</mat-label>
+                        <input type="text" matInput placeholder="ID" formControlName="id">
+                        <button *ngIf="formProject.en.controls['id'].value" (click)="formProject.en.controls['id'].reset()" mat-icon-button matSuffix>
+                            <i class="fa fa-solid fa-window-close"></i>
+                        </button>
+                    </mat-form-field>
                     <mat-form-field class="w-100 col-6">
                         <mat-label>Name</mat-label>
                         <input type="text" matInput placeholder="Name" formControlName="name">
@@ -59,13 +66,20 @@
                     </div>
                     <div class="row">
                         <button (click)="updateProject('en')" class="m-1" mat-raised-button>
-                            Update
+                            {{formProject.en.controls['id'].value ? 'Update' : 'Create'}}
                         </button>
                     </div>
                 </form>
             </mat-tab>
             <mat-tab label="VI">
                 <form class="container-fluid" [formGroup]="formProject.vi">
+                    <mat-form-field class="w-100 col-6">
+                        <mat-label>ID</mat-label>
+                        <input type="text" matInput placeholder="ID" formControlName="id">
+                        <button *ngIf="formProject.vi.controls['id'].value" (click)="formProject.vi.controls['id'].reset()" mat-icon-button matSuffix>
+                            <i class="fa fa-solid fa-window-close"></i>
+                        </button>
+                    </mat-form-field>
                     <mat-form-field class="w-100 col-6">
                         <mat-label>Tên project</mat-label>
                         <input type="text" matInput placeholder="Tên project" formControlName="name">
@@ -102,7 +116,7 @@
                     </div>
                     <div class="row">
                         <button (click)="updateProject('vi')" class="m-1" mat-raised-button>
-                            Cập nhật
+                            {{formProject.vi.controls['id'].value ? 'Cập nhật' : 'Tạo mới'}}
                         </button>
                     </div>
                 </form>
@@ -120,19 +134,13 @@
                     <mat-divider class="my-2"></mat-divider>
                     <div class="row row-cols-5 gy-2">
                         <div class="col" *ngFor="let item of projectPreviews">
-                            <app-card-item (onDeleteEvent)="onDeleteDocument('Project',item.documentId)" [data]="mapProjectToCardItem(item)"></app-card-item>
+                            <app-card-item (onDeleteEvent)="onDeleteDocument('Project',item.documentId)" (onEditEvent)="onEditProject(item)" [data]="mapProjectToCardItem(item)"></app-card-item>
                         </div>
                     </div>
                 </section>
             </mat-tab>
         </mat-tab-group>
-        <div class="row">
-            <div class="col">
-                <button class="float-right" (click)="goback()" mat-raised-button color="accent">
-                    GO BACK
-                </button>
-            </div>
-        </div>
+        
     </section>
 
     <!-- Experience -->
@@ -140,6 +148,15 @@
         <mat-tab-group  (selectedIndexChange)="selectedTabIndexExperienceChange($event)">
             <mat-tab label="EN">
                 <form class="container-fluid" [formGroup]="formExperience.en">
+                    <div class="row">
+                        <mat-form-field class="col-6">
+                            <mat-label>ID</mat-label>
+                            <input formControlName="id" matInput placeholder="ID">
+                        </mat-form-field>
+                        <button *ngIf="formExperience.en.controls['id'].value" (click)="formExperience.en.controls['id'].reset()" mat-icon-button matSuffix>
+                            <i class="fa fa-solid fa-window-close"></i>
+                        </button>
+                    </div>
                     <div class="row">
                         <mat-form-field class="col-6">
                             <mat-label>Name</mat-label>
@@ -183,13 +200,24 @@
                     <div class="row">
                         <div class="col-6">
                             <button class="mb-1 mx-auto" (click)="onUpdateExperience('en')"
-                                mat-raised-button>Update</button>
+                                mat-raised-button>
+                                {{formExperience.en.controls['id'].value ? 'Update' : 'Create' }}
+                            </button>
                         </div>
                     </div>
                 </form>
             </mat-tab>
             <mat-tab label="VI">
                 <form class="container-fluid" [formGroup]="formExperience.vi">
+                    <div class="row">
+                        <mat-form-field class="col-6">
+                            <mat-label>ID</mat-label>
+                            <input formControlName="id" matInput placeholder="ID">
+                        </mat-form-field>
+                        <button *ngIf="formExperience.vi.controls['id'].value" (click)="formExperience.vi.controls['id'].reset()" mat-icon-button matSuffix>
+                            <i class="fa fa-solid fa-window-close"></i>
+                        </button>
+                    </div>
                     <div class="row">
                         <mat-form-field class="col-6">
                             <mat-label>Tên dự án</mat-label>
@@ -232,8 +260,7 @@
                     </form>
                     <div class="row">
                         <div class="col-6">
-                            <button class="mb-1 mx-auto" (click)="onUpdateExperience('vi')" mat-raised-button>Cập
-                                nhật</button>
+                            <button class="mb-1 mx-auto" (click)="onUpdateExperience('vi')" mat-raised-button> {{formExperience.en.controls['id'].value ? 'Cập nhật' : 'Tạo mới' }}</button>
                         </div>
                     </div>
                 </form>
@@ -252,19 +279,19 @@
                     <mat-divider class="my-2"></mat-divider>
                     <div class="row row-cols-5 gy-2">
                         <div class="col" *ngFor="let item of experiencesPreview">
-                            <app-card-item [type]="1" (onDeleteEvent)="onDeleteDocument('Experience',item.documentId)" [data]="mapExperienceToCardItem(item)"></app-card-item>
+                            <app-card-item [type]="1" (onEditEvent)="onEditExperience(item)" (onDeleteEvent)="onDeleteDocument('Experience',item.documentId)" [data]="mapExperienceToCardItem(item)"></app-card-item>
                         </div>
                     </div>
                 </section>
             </mat-tab>
 
         </mat-tab-group>
-        <div class="row">
-            <div class="col">
-                <button class="float-right" (click)="goback()" mat-raised-button color="accent">
-                    GO BACK
-                </button>
-            </div>
+    </section>
+    <section class="row">
+        <div class="col">
+            <button class="float-right" (click)="goback()" mat-raised-button color="accent">
+                GO BACK
+            </button>
         </div>
     </section>
 </div>

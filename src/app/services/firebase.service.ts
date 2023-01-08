@@ -43,7 +43,7 @@ export class FirebaseService {
       let query: CollectionReference | Query = ref;
       query = query.where('lang', '==', lang);
       return query;
-    })
+    });
   }
 
   getCollection<T>(path: string){
@@ -73,6 +73,26 @@ export class FirebaseService {
     return this._project(lang).get().pipe(switchMap((value, _)=>{
       this.spinner.hide();
       return of(value);
+    })).toPromise();
+  }
+
+  getExperienceById(id: string){
+    id = id.trim();
+    this.spinner.show();
+    const response = this.afs.doc<IExperience>(`Experience/${id}`);
+    return response.get().pipe(switchMap((value, _) =>{
+      this.spinner.hide();
+      return of(value.data());
+    })).toPromise();
+  }
+
+  getProjectById(id: string){
+    id = id.trim();
+    this.spinner.show();
+    const response = this.afs.doc<IProject>(`Project/${id}`);
+    return response.get().pipe(switchMap((value)=>{
+      this.spinner.hide();
+      return of(value.data());
     })).toPromise();
   }
 

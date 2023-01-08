@@ -1,0 +1,73 @@
+<section class="admin-footer">
+    <mat-tab-group>
+        <mat-tab label="EN">
+            <form *ngIf="formFooter && formFooter.en" [formGroup]="formFooter.en" class="container-fluid">
+                <div class="row">
+                    <div class="col-6">
+                        <mat-form-field class="w-100">
+                            <mat-label>
+                                ID
+                            </mat-label>
+                            <input matInput formControlName="id" placeholder="ID"/>
+                            <!-- <button *ngIf="formFooter.en.controls['id'].value" (click)="formFooter.en.controls['id'].reset()" mat-icon-button matSuffix>
+                                <i class="fa fa-solid fa-window-close"></i>
+                            </button> -->
+                        </mat-form-field>
+                    </div>
+                    <div class="col-12">
+                        <mat-form-field class="w-100">
+                            <mat-label>
+                                Content
+                            </mat-label>
+                            <textarea matInput formControlName="content" placeholder="Content"></textarea>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <button class="my-2" mat-raised-button (click)="updateContactInfor('en')"> 
+                            Update
+                        </button>
+                    </div>
+                </div>
+            </form> 
+        </mat-tab>
+        <mat-tab label="VI">
+            <form *ngIf="formFooter && formFooter.vi" [formGroup]="formFooter.vi" class="container-fluid">
+                <div class="row">
+                    <div class="col-6">
+                        <mat-form-field class="w-100">
+                            <mat-label>
+                                ID
+                            </mat-label>
+                            <input matInput formControlName="id" placeholder="ID"/>
+                            <!-- <button *ngIf="formFooter.vi.controls['id'].value" (click)="formFooter.vi.controls['id'].reset()" mat-icon-button matSuffix>
+                                <i class="fa fa-solid fa-window-close"></i>
+                            </button> -->
+                        </mat-form-field>
+                    </div>
+                    <div class="col-12">
+                        <mat-form-field class="w-100">
+                            <mat-label>
+                                Nội dung
+                            </mat-label>
+                            <textarea matInput formControlName="content" placeholder="Content"></textarea>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <button class="my-2" mat-raised-button (click)="updateContactInfor('vi')"> 
+                            Cập nhật
+                        </button>
+                    </div>
+                </div>
+            </form> 
+        </mat-tab>
+    </mat-tab-group>
+    <div class="row">
+        <div class="col">
+        <button class="float-right" mat-raised-button color="accent" (click)="goBack()" > Go back</button>
+        </div>
+    </div>
+</section>
