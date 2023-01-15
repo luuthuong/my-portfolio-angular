@@ -37,7 +37,6 @@ export class HeaderComponent extends BaseComponent implements OnInit {
   constructor(
     private router: Router,
     public languageService: LanguageService,
-    private firebaseService: FirebaseService,
     private globalService: GlobalService
   ) {
     super();
@@ -78,6 +77,10 @@ export class HeaderComponent extends BaseComponent implements OnInit {
       this.languageFormControl.setValue(language);
       this.languageService.changeLanguage(language);
       StorageService.setItem('lang', language);
+
       this.globalService.updateInformation();
+      this.globalService.updateProject();
+      this.globalService.updateExperience();
+      this.globalService.updateContact();
     }
 }

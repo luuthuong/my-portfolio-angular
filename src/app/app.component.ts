@@ -1,12 +1,10 @@
-import { takeUntil } from 'rxjs/operators';
 import { Component, OnInit } from '@angular/core';
 import AOS from 'aos';
+import { GlobalService } from './services/global.service';
 import { LanguageService } from './services/language.service';
 import { StorageService } from './services/storage.service';
-import { NgxSpinnerService } from 'ngx-spinner';
-import { GlobalService } from './services/global.service';
-import { FirebaseService } from './services/firebase.service';
 import { BaseComponent } from './shared/components/base-component.component';
+import { FireStorageService } from './services/fire-storage.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -17,6 +15,7 @@ export class AppComponent extends BaseComponent implements OnInit {
   constructor(
     private langService: LanguageService,
     private globalService: GlobalService,
+    private fireStorageService: FireStorageService
   ) {
     super();
     const lang = StorageService.getItem('lang') as 'en' | 'vi'
@@ -27,6 +26,10 @@ export class AppComponent extends BaseComponent implements OnInit {
     AOS.refresh();
   }
   async ngOnInit() {
-    await this.globalService.updateInformation();
+    const information = this.globalService.updateInformation()
+    const project = this.globalService.updateProject();
+    const experience = this.globalService.updateExperience();
+    const footer = this.globalService.updateContact();
+    await Promise.all([information, project, experience])
   }
 }

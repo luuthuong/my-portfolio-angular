@@ -40,7 +40,6 @@ export class BannerComponent extends BaseComponent implements OnInit {
     .pipe(takeUntil(this.ngUnSubcribe))
     .subscribe(result =>{
       this.information = result;
-      console.log(this.information)
     });
   }
 

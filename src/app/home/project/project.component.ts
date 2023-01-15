@@ -1,6 +1,9 @@
+import { takeUntil } from 'rxjs/operators';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
+import { GlobalService } from 'src/app/services/global.service';
 import { BaseComponent } from 'src/app/shared/components/base-component.component';
+import { IProject } from './../../shared/models/project.model';
 
 @Component({
   selector: 'app-project',
@@ -17,14 +20,25 @@ export class ProjectComponent extends BaseComponent implements OnInit {
     items: 1,
     autoplay: true,
     autoplayTimeout:5000
-  }
+  };
+  projects : IProject[] = [];
+
   @ViewChild('imgContainer') imgContainer!: ElementRef;
-  constructor() { 
+  constructor(
+    private globalService: GlobalService
+  ) { 
     super();
   }
 
   ngOnInit(): void {
+    this.globalService.$getProject
+      .pipe(takeUntil(this.ngUnSubcribe))
+      .subscribe(result =>{
+        this.projects = result;
+      });
+    
   }
+
 
   debug(){
     if(!this.imgContainer) return;

@@ -8,14 +8,14 @@
             </div>
             <div class="jobs-tabs jobs-tabs__wrapper" data-aos="fade-up" data-aos-duration="1000">
                 <ul ngbNav #nav="ngbNav" [(activeId)]="active"  class="nav-tabs jobs-tabs">
-                    <li *ngFor='let JOB of "EXPERIENCE.JOB" | translate; let i = index' [title]="JOB.TAB"
+                    <li *ngFor='let JOB of globalService.$getExperience | async; let i = index' [title]="JOB.name"
                         [ngbNavItem]="i">
-                        <a ngbNavLink>{{JOB.TAB}}</a>
+                        <a ngbNavLink>{{JOB.name}}</a>
                         <ng-template ngbNavContent>
-                            <h4 class='title-tab-content'>{{JOB.TITLE}} | <span
-                                    class="company-tab-content">{{JOB.TAB}}</span></h4>
-                            <h5 class="job-time">{{JOB.DATE}}</h5>
-                            <p *ngFor='let jobDescriptionParagraph of JOB.DESCRIPTION; let i = index'
+                            <h4 class='title-tab-content'>{{JOB.position}} <span
+                                    class="company-tab-content">{{JOB.content.title}}</span></h4>
+                            <h5 class="job-time">{{JOB.content.time}}</h5>
+                            <p *ngFor='let jobDescriptionParagraph of JOB.content.description; let i = index'
                                 class="job-description" [innerHTML]="jobDescriptionParagraph | translate"></p>
                             <span></span>
                         </ng-template>

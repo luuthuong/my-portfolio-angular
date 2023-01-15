@@ -1,3 +1,4 @@
+import { IContact } from './../shared/models/contact.model';
 import { IProject } from './../shared/models/project.model';
 import { finalize, switchMap, takeUntil } from 'rxjs/operators';
 import { LanguageService } from 'src/app/services/language.service';
@@ -19,7 +20,7 @@ export class FirebaseService {
     private spinner: NgxSpinnerService
   ) { }
 
-  private _information(lang: "vi" | "en"){
+  private _information(lang: "vi" | "en") {
     this.spinner.show();
     return this.afs.collection<IInfomation>("Intro", ref => {
       let query: CollectionReference | Query = ref;
@@ -28,89 +29,106 @@ export class FirebaseService {
     });
   }
 
-  private _experience(lang: "vi" | "en"){
+  private _experience(lang: "vi" | "en") {
     this.spinner.show();
-    return this.afs.collection<IExperience>("Experience", ref =>{
+    return this.afs.collection<IExperience>("Experience", ref => {
       let query: CollectionReference | Query = ref;
       query = query.where('lang', '==', lang);
       return query;
     })
   }
 
-  private _project(lang: "vi" | "en"){
+  private _project(lang: "vi" | "en") {
     this.spinner.show();
-    return this.afs.collection<IProject>("Project", ref =>{
+    return this.afs.collection<IProject>("Project", ref => {
       let query: CollectionReference | Query = ref;
       query = query.where('lang', '==', lang);
       return query;
     });
   }
 
-  getCollection<T>(path: string){
+  private _contact(lang: 'vi'|'en'){
     this.spinner.show();
-    return this.afs.collection<T>(path).get().pipe(switchMap((value, index)=>{
+    return this.afs.collection<IContact>("Contact", ref =>{
+      let query: CollectionReference | Query = ref;
+      query = query.where('lang', '==', lang);
+      return query;
+    })
+  }
+
+  getCollection<T>(path: string) {
+    this.spinner.show();
+    return this.afs.collection<T>(path).get().pipe(switchMap((value, index) => {
       this.spinner.hide();
       return of(value);
     })).toPromise();
   }
 
-  getInformation(lang: 'vi'|'en' = this.languageService.lang) {
+  getInformation(lang: 'vi' | 'en' = this.languageService.lang) {
     return this._information(lang).get().pipe(switchMap((value, _) => {
       this.spinner.hide();
       return of(value);
     })).toPromise();
   }
 
-  getExperience(lang: 'vi'|'en' = this.languageService.lang ){
-    return this._experience(lang).get().pipe(switchMap((value,_)=>{
+  getExperience(lang: 'vi' | 'en' = this.languageService.lang) {
+    return this._experience(lang).get().pipe(switchMap((value, _) => {
       this.spinner.hide();
       return of(value);
     })).toPromise();
   }
 
 
-  getProject(lang: 'vi'|'en' = this.languageService.lang ){
-    return this._project(lang).get().pipe(switchMap((value, _)=>{
+  getProject(lang: 'vi' | 'en' = this.languageService.lang) {
+    return this._project(lang).get().pipe(switchMap((value, _) => {
       this.spinner.hide();
       return of(value);
     })).toPromise();
   }
 
-  getExperienceById(id: string){
+  getContact(lang: 'vi'|'en' = this.languageService.lang){
+    return this._contact(lang).get().pipe(switchMap((value) =>{
+      this.spinner.hide();
+      return of(value)
+    })).toPromise();
+  }
+
+  getExperienceById(id: string) {
     id = id.trim();
     this.spinner.show();
     const response = this.afs.doc<IExperience>(`Experience/${id}`);
-    return response.get().pipe(switchMap((value, _) =>{
+    return response.get().pipe(switchMap((value, _) => {
       this.spinner.hide();
       return of(value.data());
     })).toPromise();
   }
 
-  getProjectById(id: string){
+  getProjectById(id: string) {
     id = id.trim();
     this.spinner.show();
     const response = this.afs.doc<IProject>(`Project/${id}`);
-    return response.get().pipe(switchMap((value)=>{
+    return response.get().pipe(switchMap((value) => {
       this.spinner.hide();
       return of(value.data());
     })).toPromise();
   }
 
-  stopLoading(){
+
+  stopLoading() {
     this.spinner.hide();
   }
 
-  updateCollection<T>(path: string, data : T){
+  updateCollection<T>(path: string, data: T) {
     const collection = this.afs.collection<T>(path);
-    collection.add(data);  
+    collection.add(data);
   }
 
-  updateDoc<T>(collection: string,docId: string, data:T){
+  updateDoc<T>(collection: string, docId: string, data: T) {
     const collect = this.afs.collection<T>(collection);
     collect.doc(docId).update(data);
   }
 
-   async deleteDocument(collection: string, docId: string){
+  async deleteDocument(collection: string, docId: string) {
     const collect = this.afs.collection(collection);
     await collect.doc(docId).delete();
   }

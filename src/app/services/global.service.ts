@@ -1,3 +1,5 @@
+import { IContact } from './../shared/models/contact.model';
+import { IProject } from './../shared/models/project.model';
 import { FirebaseService } from './firebase.service';
 import { IExperience } from './../shared/models/experience.model';
 import { IInfomation } from './../shared/models/information.model';
@@ -10,7 +12,8 @@ import { Injectable } from '@angular/core';
 export class GlobalService {
   $getInformation = new Subject<IInfomation>();
   $getExperience = new Subject<IExperience[]>();
-  $getProject = new Subject
+  $getProject = new Subject<IProject[]>();
+  $getContact = new Subject<IContact[]>();
 
   constructor(
     private firebaseService: FirebaseService
@@ -30,5 +33,25 @@ export class GlobalService {
       documentId: item.id
     }));
     this.$getExperience.next(experiences)
+  }
+
+  async updateProject(){
+    const projectResponse = await this.firebaseService.getProject();
+    const projects = projectResponse.docs.map(item =>{
+      return {
+        ...item.data(),
+        documentId: item.id
+      } as IProject;
+    });
+    this.$getProject.next(projects);
+  }
+
+  async updateContact(){
+    const contactResponse  = await this.firebaseService.getContact();
+    const contacts = contactResponse.docs.map(item =>({
+      ...item.data(),
+      documentId: item.id
+    } as IContact));
+    this.$getContact.next(contacts);
   }
 }

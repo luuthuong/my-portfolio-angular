@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GlobalService } from 'src/app/services/global.service';
 import { SlideAnimation } from 'src/app/shared/animations/slide.animation';
 import { BaseComponent } from 'src/app/shared/components/base-component.component';
 
@@ -12,7 +13,9 @@ import { BaseComponent } from 'src/app/shared/components/base-component.componen
 })
 export class JobsComponent extends BaseComponent implements OnInit {
   active = 0
-  constructor() { 
+  constructor(
+    public globalService: GlobalService
+  ) { 
     super();
   }
   ngOnInit(): void {

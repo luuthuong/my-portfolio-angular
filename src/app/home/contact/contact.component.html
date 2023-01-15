@@ -1,4 +1,4 @@
-<section class="section contact" id='contact'>
+<section *ngIf="contact" class="section contact" id='contact'>
     <div class="container">
         <div class="section-box">
             <div class="mb-4" data-aos="fade-up" data-aos-duration="1000">
@@ -8,10 +8,9 @@
                 </h4>
             </div>
             <p class="" data-aos="fade-up" data-aos-duration="1000">
-                {{"CONTACT.CONTENT" | translate}}
+                {{contact.content}}
             </p>
-            <p innerHTML="{{'CONTACT.SUB_CONTENT' | translate}}" class="sub-content" data-aos="fade-up" data-aos-duration="1000">
-            </p>
+            
             <div data-aos="fade-up" data-aos-duration="1000" class="mt-5">
                 <app-button-custom title="{{'CONTACT.ACTION' | translate}}" (onClickEvent)='analyticsService.sendAnalyticEvent("click_send_mail", "contact", "email")' >
                 </app-button-custom>

@@ -65,6 +65,7 @@ export class CreateEditProjectComponent extends BaseComponent implements OnInit 
           title: new FormControl('')
         }),
         name: new FormControl(''),
+        position: new FormControl(''),
         id: new FormControl({ value: null, disabled: true })
       }),
       vi: new FormGroup({
@@ -74,6 +75,7 @@ export class CreateEditProjectComponent extends BaseComponent implements OnInit 
           title: new FormControl('')
         }),
         name: new FormControl(''),
+        position: new FormControl(''),
         id: new FormControl({ value: null, disabled: true })
       })
     };
@@ -160,7 +162,8 @@ export class CreateEditProjectComponent extends BaseComponent implements OnInit 
     const request: IExperience = {
       content: rawValue.content,
       lang: rawValue.lang,
-      name: rawValue.name
+      name: rawValue.name,
+      position: rawValue.position
     };
     if (rawValue.id) {
       this.firebaseService.updateDoc<IExperience>('Experience', rawValue.id, request);
@@ -262,7 +265,7 @@ export class CreateEditProjectComponent extends BaseComponent implements OnInit 
 
   mapExperienceToCardItem(item: IExperience): ICardItem {
     return {
-      title: item.name,
+      title: `${item.name} - ${item.position}`,
       subTitle: item.content.time,
       content: item.content.title,
       listItem: item.content.description,

@@ -1,3 +1,4 @@
+import { IContact } from './../../models/contact.model';
 import { animate, query, stagger, style, transition, trigger } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 import { takeUntil } from 'rxjs/operators';
@@ -27,6 +28,7 @@ import { BaseComponent } from './../base-component.component';
 })
 export class FooterComponent extends BaseComponent implements OnInit {
   information !: IInfomation;
+  contact !: IContact
   constructor(
       private globalService: GlobalService
   ) { 
@@ -35,7 +37,7 @@ export class FooterComponent extends BaseComponent implements OnInit {
     .pipe(takeUntil(this.ngUnSubcribe))
     .subscribe(result =>{
       this.information = result;
-    })
+    });
   }
 
   ngOnInit(): void {

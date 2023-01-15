@@ -15,6 +15,7 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { environment } from 'src/environments/environment';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireAnalyticsModule } from '@angular/fire/compat/analytics';
+import {AngularFireStorageModule, BUCKET } from '@angular/fire/compat/storage';
 @NgModule({
   declarations: [
     AppComponent
@@ -49,7 +50,8 @@ import { AngularFireAnalyticsModule } from '@angular/fire/compat/analytics';
       provide: HTTP_INTERCEPTORS,
       useClass: LoadingInterceptor,
       multi: true
-    }
+    },
+    { provide: BUCKET, useValue: 'my-portfolio' }
   ],
   bootstrap: [AppComponent],
   schemas:[
